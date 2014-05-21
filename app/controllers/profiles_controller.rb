@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
   before_action :one_profile_per_user, only: [:new, :create]
+  before_action :ensure_owner, only: [:edit, :update]
 
   def create
     @profile = Profile.new(profile_params)
@@ -57,4 +58,9 @@ class ProfilesController < ApplicationController
   def one_profile_per_user
     redirect_to edit_profile_url(current_user) if current_user.profile
   end
+
+  def ensure_owner
+    unless Profile.find_by_username(params[:username]).user_id == current_user.id
+      redirect_to profiles_url
+    end
 end
