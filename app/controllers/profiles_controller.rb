@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
     @profile.user_id = current_user.id
     @profile.username = current_user.username
     if @profile.save
-      redirect_to profile_url(@profile)
+      redirect_to profile_url(@profile.username)
     else
       flash.now[:errors] = @profile.errors.full_messages
       render :new
@@ -33,7 +33,7 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find_by_username(params[:username])
     if @profile.update_attributes(profile_params)
-      redirect_to profile_url(@profile)
+      redirect_to show_profile_url(@profile)
     else
       flash.now[:errors] = @profile.errors.full_messages
       render :edit
@@ -56,11 +56,13 @@ class ProfilesController < ApplicationController
   end
 
   def one_profile_per_user
-    redirect_to edit_profile_url(current_user) if current_user.profile
+    redirect_to edit_profile_url(current_user.username) if current_user.profile
   end
 
   def ensure_owner
-    unless Profile.find_by_username(params[:username]).user_id == current_user.id
+    unless Profile.find_by_username(params[:username])
+      .user_id == current_user.id
       redirect_to profiles_url
     end
+  end
 end

@@ -1,2 +1,33 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class='row'>
+  <div class='col-xs-8 col-xs-offset-2'>
+    <div class='photo'></div>
+    <div class='profile-header'>
+      <h2><%= @profile.username %></h2>
+      <p><%= @profile.age.to_s + ' ' + @profile.gender + ' ' + @profile.location %></p>
+    </div>
+    <div class='panel panel-default'>
+      <div class='panel-body'>
+        <div>
+          <h4>My self-summary</h4>
+          <%= @profile.summary %>
+        </div>
+        <div>
+          <h4>What I'm doing with my life</h4>
+          <%= @profile.life_direction %>
+        </div>
+        <div>
+          <h4>I'm really good at</h4>
+          <%= @profile.skills %>
+        </div>
+        <div>
+          <h4>Favorite things</h4>
+          <%= @profile.interests %>
+        </div>
+        <div>
+          <h4>I'm looking for</h4>
+          <%= @profile.goals %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
