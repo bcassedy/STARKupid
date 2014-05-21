@@ -19,6 +19,7 @@
 
 class Profile < ActiveRecord::Base
   validates :username, :age, :gender, :location, :user_id, presence: true
+  belongs_to :user
 
   def self.search_by_username(username)
     Profile.where(['username LIKE ?', "%#{username}%"])

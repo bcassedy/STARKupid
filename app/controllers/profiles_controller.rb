@@ -1,4 +1,6 @@
 class ProfilesController < ApplicationController
+  before_action :one_profile_per_user, only: [:new, :create]
+
   def create
     @profile = Profile.new(profile_params)
     @profile.user_id = current_user.id
@@ -41,14 +43,18 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).permit(
-      :age, 
-      :gender, 
-      :location, 
-      :summary, 
-      :skills, 
+      :age,
+      :gender,
+      :location,
+      :summary,
+      :skills,
       :interests,
       :life_direction,
       :goals
     )
+  end
+
+  def one_profile_per_user
+    redirect_to edit_profile_url(current_user) if current_user.profile
   end
 end
