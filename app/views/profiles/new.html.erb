@@ -1,2 +1,75 @@
-<h1>Profiles#new</h1>
-<p>Find me in app/views/profiles/new.html.erb</p>
+<div class='row'>
+  <div class='col-xs-7 col-xs-offset-2'>
+    <div class='panel panel-default'>
+      <h3>Fill Out Your Profile</h3>
+
+      <form action="<%= profiles_url %>" class='form-horizontal' role='form'>
+        <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+        <div class='form-group'>
+          <label for='profile_age' class='col-sm-2 control-label'>Age</label>
+          <div class='col-sm-10'>
+            <input class='form-control' id='profile_age' type='text' name='profile[age]' value='<%= @profile.age %>'>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='profile_age' class='col-sm-2 control-label'>Gender</label>
+          <div class='col-sm-2'>
+            <select class='form-control' id='profile_gender' name='profile[gender]'>
+              <option value='Male' <%= 'checked' if @profile.gender == 'Male' %>>
+                Male
+              </option>
+              <option value="Female" <%= 'checked' if @profile.gender == 'Female' %>>
+                Female
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for="profile_location" class="col-sm-2 control-label">Location</label>
+          <div class='col-sm-10'>
+            <input class='form-control' type="text" id='profile_location' name='profile[location]' value='<%= @profile.age %>'>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for="profile_summary" class="col-sm-2 control-label">My Self Summary</label>
+          <div class='col-sm-10'>
+            <textarea id='profile_summary' class='form-control' name='profile[summary]'><%= @profile.summary %></textarea>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for="profile_location" class="col-sm-2 control-label">What I'm Doing With My Life</label>
+          <div class='col-sm-10'>
+            <textarea id='profile_location' class='form-control' name="profile[life_direction]"><%= @profile.life_direction %></textarea>
+          </label>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='profile_skills' class='col-sm-2 control-label'>I'm Really Good At</label>
+          <div class='col-sm-10'>
+            <textarea class='form-control' id='profile_skills'name="profile[skills]"></textarea>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label for='profile_interests' class='col-sm-2 control-label'>My Favorite Things</label>
+          <div class='col-sm-10'>
+            <textarea class='form-control' id='profile_interests' name="profile[interests]"><%= @profile.interests %></textarea>
+          </div>
+        </div>
+
+        <div class='form-group'>
+          <label class='col-sm-2 control-label' for='profile_goals'>I'm Looking For</label>
+          <div class='col-sm-10'>
+            <textarea class='form-control' id='profile_goals' name='profile[goals]'><%= @profile.goals %></textarea>
+          </div>
+        </div>
+
+        <input class='btn btn-primary' type='submit' value='Save'>
+      </form>
+    </div>
+  </div>

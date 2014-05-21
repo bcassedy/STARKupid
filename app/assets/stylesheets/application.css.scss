@@ -32,11 +32,17 @@ h1 {
 #left-nav {
   float: left;
   display: inline-block;
+  // background-color: rgb(24, 50, 112);
   background-color: silver;
   position: absolute;
   top: 52px;
 }
 
 .left-nav {
-  border: 1px solid grey;
+  color: #5378c8;
+  line-height: 16px;
+}
+
+.panel {
+  text-align: center;
 }
