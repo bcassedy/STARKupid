@@ -13,3 +13,30 @@
  */
 
 @import 'bootstrap';
+
+h1 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+#email {
+  width: 26px;
+  display: inline-block;
+}
+
+#password {
+  padding-left: 1px;
+  display: inline-block;
+}
+
+#left-nav {
+  float: left;
+  display: inline-block;
+  background-color: silver;
+  position: absolute;
+  top: 52px;
+}
+
+.left-nav {
+  border: 1px solid grey;
+}
