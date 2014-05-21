@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: profiles
+#
+#  id             :integer          not null, primary key
+#  username       :string(255)      not null
+#  age            :integer          not null
+#  gender         :string(255)      not null
+#  location       :string(255)      not null
+#  summary        :text
+#  skills         :text
+#  interests      :text
+#  life_direction :text
+#  goals          :text
+#  user_id        :integer          not null
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:

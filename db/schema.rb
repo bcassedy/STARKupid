@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140521172155) do
+ActiveRecord::Schema.define(version: 20140521193158) do
+
+  create_table "profiles", force: true do |t|
+    t.string   "username",       null: false
+    t.integer  "age",            null: false
+    t.string   "gender",         null: false
+    t.string   "location",       null: false
+    t.text     "summary"
+    t.text     "skills"
+    t.text     "interests"
+    t.text     "life_direction"
+    t.text     "goals"
+    t.integer  "user_id",        null: false
+    t.string   "height"
+    t.string   "body_type"
+    t.string   "drinks"
+    t.string   "job"
+    t.string   "income"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "profiles", ["interests"], name: "index_profiles_on_interests"
+  add_index "profiles", ["username"], name: "index_profiles_on_username"
 
   create_table "users", force: true do |t|
     t.string   "username",        null: false

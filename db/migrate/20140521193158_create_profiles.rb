@@ -11,10 +11,16 @@ class CreateProfiles < ActiveRecord::Migration
       t.text :life_direction
       t.text :goals
       t.integer :user_id, null: false
+      t.string :height
+      t.string :body_type
+      t.string :drinks
+      t.string :job
+      t.string :income
 
       t.timestamps
     end
 
     add_index :profiles, :interests
+    add_index :profiles, :username
   end
 end
