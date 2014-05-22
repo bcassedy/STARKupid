@@ -1,6 +1,8 @@
 STARKupid.Collections.Profiles = Backbone.Collection.extend({
   model: STARKupid.Models.Profile,
+
   url: 'api/profiles',
+
   getOrFetch: function (username) {
     var profile = this.findWhere({
       username: username
@@ -15,5 +17,9 @@ STARKupid.Collections.Profiles = Backbone.Collection.extend({
       }
     });
     return profile;
+  },
+
+  isNew: function () {
+    this.get('created_at') == null;
   }
 });
