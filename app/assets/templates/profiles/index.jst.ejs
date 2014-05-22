@@ -2,11 +2,12 @@
 <div class='panel'>
   <div class='col-xs-8 col-xs-offset-2'>
     <% profiles.each(function (profile) { %>
-      <div class='col-xs-4 panel panel-default'>
+      <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-4 panel panel-default'>
         <div class='index-photo'></div>
         <p><%= profile.escape('username') %></p>
         <p><%= profile.escape('age') + ' | ' + profile.escape('location') %></p>
       </div>
+      </a>
     <% }); %>
   </div>
 </div>

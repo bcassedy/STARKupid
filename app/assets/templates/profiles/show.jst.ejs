@@ -1,0 +1,33 @@
+<div class='row'>
+  <div class='col-xs-8 col-xs-offset-2'>
+    <div class='photo'></div>
+    <div class='profile-header'>
+      <h2><%= profile.escape('username') %></h2>
+      <p><%= profile.escape('age') + ' ' + profile.escape('gender') + ' ' + profile.escape('location') %></p>
+    </div>
+    <div class='panel panel-default'>
+      <div class='panel-body'>
+        <div>
+          <h4>My self-summary</h4>
+          <%= profile.escape('summary') %>
+        </div>
+        <div>
+          <h4>What I'm doing with my life</h4>
+          <%= profile.escape('life_direction') %>
+        </div>
+        <div>
+          <h4>I'm really good at</h4>
+          <%= profile.escape('skills') %>
+        </div>
+        <div>
+          <h4>Favorite things</h4>
+          <%= profile.escape('interests') %>
+        </div>
+        <div>
+          <h4>I'm looking for</h4>
+          <%= profile.escape('goals') %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
