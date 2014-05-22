@@ -8,12 +8,12 @@ window.STARKupid = {
     STARKupid.Collections.profiles = new STARKupid.Collections.Profiles([]);
     new STARKupid.Routers.CupidRouter({
       $rootEl: $('#container'),
-      profiles: STARKupid.Collections.profiles;
+      profiles: STARKupid.Collections.profiles
     });
+    Backbone.history.start();
   }
 };
 
 $(document).ready(function(){
   STARKupid.initialize();
-
 });

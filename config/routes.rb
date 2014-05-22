@@ -5,7 +5,7 @@ STARKupid::Application.routes.draw do
   end
   resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]
-  resources :profiles, only: [:new, :create, :update, :index]
+  # resources :profiles, only: [:new, :create, :update, :index]
   get 'profiles/:username/messages/new', to: 'messages#new', as: 'new_message'
   post 'profiles/:username/messages', to: 'messages#create', as: 'make_message'
   get 'profiles/:username', to: 'profiles#show', as: 'show_profile'
