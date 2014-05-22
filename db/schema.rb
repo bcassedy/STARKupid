@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140522004456) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "messages", force: true do |t|
     t.integer  "sender_id",   null: false
     t.integer  "receiver_id", null: false
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 20140522004456) do
     t.datetime "updated_at"
   end
 
-  add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id"
-  add_index "messages", ["sender_id"], name: "index_messages_on_sender_id"
+  add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree
+  add_index "messages", ["sender_id"], name: "index_messages_on_sender_id", using: :btree
 
   create_table "profiles", force: true do |t|
     t.string   "username",       null: false
@@ -45,8 +48,8 @@ ActiveRecord::Schema.define(version: 20140522004456) do
     t.datetime "updated_at"
   end
 
-  add_index "profiles", ["interests"], name: "index_profiles_on_interests"
-  add_index "profiles", ["username"], name: "index_profiles_on_username"
+  add_index "profiles", ["interests"], name: "index_profiles_on_interests", using: :btree
+  add_index "profiles", ["username"], name: "index_profiles_on_username", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username",        null: false
@@ -57,7 +60,7 @@ ActiveRecord::Schema.define(version: 20140522004456) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end

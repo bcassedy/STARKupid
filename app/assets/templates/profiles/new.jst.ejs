@@ -1,0 +1,71 @@
+<div class='row'>
+  <div class='col-xs-8 col-xs-offset-2'>
+    <div class='form-container'>
+      <h3>Fill Out Your Profile</h3>
+
+      <form action="<%= profiles_url %>" role='form' method='POST'>
+        <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+        <div class='form-group'>
+          <label for='profile_age'>Age</label>
+
+            <input class='form-control' id='profile_age' type='text' name='profile[age]' value='<%= profile.get('age') %>'>
+
+        </div>
+
+        <div class='form-group'>
+          <label for='profile_age'>Gender</label>
+            <select class='form-control' id='profile_gender' name='profile[gender]'>
+              <option value='Male'>
+                Male
+              </option>
+              <option value="Female">
+                Female
+              </option>
+            </select>
+        </div>
+
+        <div class='form-group'>
+          <label for="profile_location" >Location</label>
+
+            <input class='form-control' type="text" id='profile_location' name='profile[location]' value='<%= profile.get('age') %>'>
+
+        </div>
+
+        <div class='form-group'>
+          <label for="profile_summary" >My Self Summary</label>
+
+            <textarea id='profile_summary' class='form-control' name='profile[summary]'><%= profile.get('summary') %></textarea>
+
+        </div>
+
+        <div class='form-group'>
+          <label for="profile_location" >What I'm Doing With My Life</label>
+
+            <textarea id='profile_location' class='form-control' name="profile[life_direction]"><%= profile.get('life_direction') %></textarea>
+          </label>
+
+        </div>
+
+        <div class='form-group'>
+          <label for='profile_skills' >I'm Really Good At</label>
+
+            <textarea class='form-control' id='profile_skills'name="profile[skills]"></textarea>
+
+        </div>
+
+        <div class='form-group'>
+          <label for='profile_interests' >My Favorite Things</label>
+
+            <textarea class='form-control' id='profile_interests' name="profile[interests]"><%= profile.get('interests') %></textarea>
+        </div>
+
+        <div class='form-group'>
+          <label  for='profile_goals'>I'm Looking For</label>
+
+            <textarea class='form-control' id='profile_goals' name='profile[goals]'><%= profile.get('goals') %></textarea>
+        </div>
+
+        <input class='btn btn-primary' type='submit' value='Save'>
+      </form>
+    </div>
+  </div>
