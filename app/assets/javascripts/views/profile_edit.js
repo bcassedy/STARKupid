@@ -1,4 +1,4 @@
-STARKupid.Views.ProfileNew = Backbone.View.extend({
+STARKupid.Views.ProfileEdit = Backbone.View.extend({
   events: {
     'submit .profile-form': 'submit'
   },
@@ -17,10 +17,11 @@ STARKupid.Views.ProfileNew = Backbone.View.extend({
   submit: function (event) {
     event.preventDefault();
     var profileData = $(event.target).serializeJSON();
-    var collection = this.collection;
-    this.collection.create(profileData)
-    collection.last().on('sync', function () {
-      Backbone.history.navigate('#/profiles/' + this.escape('username'));
+    var model = this.model;
+    this.model.save(profileData, {
+      success: function (response) {
+        Backbone.history.navigate('#/profiles/' + model.escape('username'));
+      }
     });
   }
-});
+})

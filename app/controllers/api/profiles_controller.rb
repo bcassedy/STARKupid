@@ -21,6 +21,15 @@ module Api
       end
     end
 
+    def update
+      @profile = Profile.find_by_username(params[:id])
+      if @profile.update_attributes(profile_params)
+        render partial: 'api/profiles/profile', locals: { profile: @profile }
+      else
+        render json: { errors: @profile.errors.full_messages }, status: 422
+      end
+    end
+
     private
 
     def profile_params

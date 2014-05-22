@@ -14,11 +14,14 @@
       </div>
       <ul class='nav'>
       <% if current_user %>
+        <script>
+          var currentUserUsername = '<%= current_user.username %>';
+          </script>
         <li>
-          <%= link_to( 
-          'Sign Out', 
-          session_url, 
-          method: :delete, 
+          <%= link_to(
+          'Sign Out',
+          session_url,
+          method: :delete,
           class: 'navbar-right navbar-link') %>
         </li>
       <% else %>
