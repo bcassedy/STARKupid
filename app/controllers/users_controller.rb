@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       signin_user!(@user)
-      redirect_to new_profile_url
+      redirect_to root_url
     else
       flash.now[:errors] = @user.errors.full_messages
       render :new
