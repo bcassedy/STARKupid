@@ -10,7 +10,7 @@
   <nav class='navbar navbar-default' role='navigation'>
     <div class='container-fluid'>
       <div class='navbar-header'>
-        <a href='#' class='navbar-brand'>STARKupid</a>
+        <a href='#' class='navbar-brand'><%= image_tag 'starkupid.png', size: '55x40' %></a>
       </div>
       <ul class='nav'>
       <% if current_user %>
@@ -35,8 +35,8 @@
 
   <div id='left-nav'>
     <ul class='nav nav-pills nav-stacked'>
-      <li class='left-nav'><a href='#'>Browse Matches</a></li>
-      <li class='left-nav'><a href='#'>Messages</a></li>
+      <li class='left-nav'><a href='<%= profiles_url %>'>Browse Matches</a></li>
+      <li class='left-nav'><a href='<%= messages_url %>'>Messages</a></li>
       <li class='left-nav'><a href='#'>Visitors</a></li>
   </div>
 

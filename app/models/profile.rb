@@ -13,6 +13,11 @@
 #  life_direction :text
 #  goals          :text
 #  user_id        :integer          not null
+#  height         :string(255)
+#  body_type      :string(255)
+#  drinks         :string(255)
+#  job            :string(255)
+#  income         :string(255)
 #  created_at     :datetime
 #  updated_at     :datetime
 #
