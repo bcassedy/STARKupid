@@ -17,9 +17,5 @@ STARKupid.Collections.Profiles = Backbone.Collection.extend({
       }
     });
     return profile;
-  },
-
-  isNew: function () {
-    this.get('created_at') == null;
   }
 });
