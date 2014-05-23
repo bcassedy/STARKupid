@@ -34,6 +34,7 @@ module Api
 
     def profile_params
       params.require(:profile).permit(
+        :photo_url,
         :age,
         :gender,
         :location,

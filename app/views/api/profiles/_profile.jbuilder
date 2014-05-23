@@ -1,7 +1,7 @@
 json.extract!(
   profile,
   :id,
-  :username, 
+  :username,
   :age,
   :gender,
   :location,
@@ -17,5 +17,6 @@ json.extract!(
   :job,
   :income,
   :created_at,
-  :updated_at
+  :updated_at,
+  :photo_url
 )
