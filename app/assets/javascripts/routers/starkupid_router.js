@@ -9,7 +9,7 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
     'profiles/:username': 'showProfile',
     'profile/new': 'newProfile',
     'profile/edit': 'editProfile',
-    'inbox': 'messagesIndex'
+    'messages': 'messagesIndex',
   },
 
   profilesIndex: function () {
@@ -51,7 +51,13 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
   },
 
   messagesIndex: function () {
-
+    var messages = new STARKupid.Collections.Messages();
+    messages.fetch();
+    var messagesIndexView = new STARKupid.Views.MessagesIndex({
+      collection: messages
+    });
+    debugger
+    this._swapView(messagesIndexView);
   },
 
   _swapView: function (view) {
