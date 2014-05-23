@@ -1,8 +1,10 @@
 STARKupid::Application.routes.draw do
   root to: 'sessions#new'
   namespace :api, defaults: { format: :json } do
-    resources :profiles, except: [:new, :edit]
-    resources :messages
+    resources :profiles, except: [:new, :edit] do
+      resources :messages, only: [:create]
+    end
+    resources :messages, only: [:index, :show, :destroy]
   end
   resources :users, only: [:new, :create]
   resource :session, only: [:new, :create, :destroy]

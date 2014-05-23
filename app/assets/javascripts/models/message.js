@@ -1,2 +1,1 @@
-STARKupid.Models.Message = Backbone.Model.extend({
-});
+STARKupid.Models.Message = Backbone.Model.extend({});

@@ -3,7 +3,7 @@ module Api
     def create
       @message =  Message.new(message_params)
       @message.sender_id = current_user.id
-      receiver = User.find_by_username(params[:username])
+      receiver = User.find_by_username(params[:profile_id])
       @message.receiver_id = receiver.id
       if @message.save
         render partial: 'api/messages/message', locals: { message: @message }

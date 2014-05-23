@@ -1,5 +1,5 @@
 <div class='row'>
-  <div class='col-xs-8 col-xs-offset-2'>
+  <div class='col-xs-10'>
     <div class='photo'>
       <img
         src="<%= profile.escape('photo_url') %>"
@@ -11,7 +11,7 @@
       <h2><%= profile.escape('username') %></h2>
       <p><%= profile.escape('age') + ' | ' + profile.escape('gender') + ' | ' + profile.escape('location') %></p>
     </div>
-    <div id='send-msg'>
+    <div id='send-msg' class='profile-header msg-button'>
       Send a Message
     </div>
     <div class='panel panel-default'>

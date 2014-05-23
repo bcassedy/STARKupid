@@ -1,19 +1,21 @@
-<h1>Matches</h1>
-<div class='panel'>
-  <div class='col-xs-8 col-xs-offset-2'>
-    <% profiles.each(function (profile) { %>
-      <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-3'>
-        <div class='index-photo-div'>
-          <img
-            src="<%= profile.escape('photo_url') %>"
-            alt='Photo'
-            class='index-photo'>
+<div class='row'>
+  <div class='col-xs-10'>
+     <h1>Matches</h1>
+    <div class='panel'>
+      <% profiles.each(function (profile) { %>
+        <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-3'>
+          <div class='index-photo-div'>
+            <img
+              src="<%= profile.escape('photo_url') %>"
+              alt='Photo'
+              class='index-photo'>
+          </div>
+          <p><%= profile.escape('username') %></p>
+          <p><%= profile.escape('age') + ' | ' + profile.escape('location') %></p>
         </div>
-        <p><%= profile.escape('username') %></p>
-        <p><%= profile.escape('age') + ' | ' + profile.escape('location') %></p>
-      </div>
-      </a>
-    <% }); %>
+        </a>
+      <% }); %>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
   </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
