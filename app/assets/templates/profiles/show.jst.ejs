@@ -9,7 +9,10 @@
     </div>
     <div class='profile-header'>
       <h2><%= profile.escape('username') %></h2>
-      <p><%= profile.escape('age') + ' ' + profile.escape('gender') + ' ' + profile.escape('location') %></p>
+      <p><%= profile.escape('age') + ' | ' + profile.escape('gender') + ' | ' + profile.escape('location') %></p>
+    </div>
+    <div id='send-msg'>
+      Send a Message
     </div>
     <div class='panel panel-default'>
       <div class='panel-body'>

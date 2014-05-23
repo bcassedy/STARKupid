@@ -56,7 +56,6 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
     var messagesIndexView = new STARKupid.Views.MessagesIndex({
       collection: messages
     });
-    debugger
     this._swapView(messagesIndexView);
   },
 

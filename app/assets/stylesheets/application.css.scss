@@ -30,14 +30,16 @@ h1 {
 }
 
 #left-nav {
-  clear: both;
+  float: left;
+  display: inline-block;
   max-width: 140px;
 }
 
-#left-nav.affix {
-  position: fixed;
-  top: 52px;
-}
+// #left-nav.affix {
+//   position: fixed;
+//   top: 52px;
+//   float: left;
+// }
 
 .left-nav {
   color: #5378c8;
@@ -81,4 +83,9 @@ h1 {
 
 .navbar {
   margin-bottom: 0px;
+}
+
+.content {
+  float: left;
+  clear: right;
 }

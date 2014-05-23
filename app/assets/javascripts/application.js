@@ -24,10 +24,10 @@
 //= require_tree ./routers
 //= require_tree .
 
-$(document).ready(function () {
-  $('#left-nav').affix({
-        offset: {
-          top: $('.navbar').height()
-        }
-  });
-});
+// $(document).ready(function () {
+//   $('#left-nav').affix({
+//         offset: {
+//           top: $('.navbar').height()
+//         }
+//   });
+// });
