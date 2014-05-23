@@ -23,3 +23,11 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+
+$(document).ready(function () {
+  $('#left-nav').affix({
+        offset: {
+          top: $('.navbar').height()
+        }
+  });
+});

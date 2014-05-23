@@ -30,9 +30,12 @@ h1 {
 }
 
 #left-nav {
-  float: left;
-  display: inline-block;
-//  position: absolute;
+  clear: both;
+  max-width: 140px;
+}
+
+#left-nav.affix {
+  position: fixed;
   top: 52px;
 }
 
