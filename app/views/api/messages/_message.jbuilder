@@ -9,3 +9,4 @@ json.extract!(
   :updated_at
 )
 json.sender message.sender.username
+json.sender_photo message.sender.profile.photo_url

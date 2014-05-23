@@ -44,6 +44,7 @@ h1 {
 .left-nav {
   color: #5378c8;
   line-height: 16px;
+  font-size: medium;
 }
 
 .form-container {
@@ -102,4 +103,25 @@ h1 {
 
 .msg-button:hover {
   background-color: #999;
+}
+
+.msg-row {
+  background-color: #555;
+  margin-right: 40px;
+}
+
+.mini-photo {
+  max-height: 50px;
+  max-width: 50px;
+  margin-top: 15px;
+  display: inline-block;
+  position: relative;
+}
+
+.msg-title {
+  font-size: 95%;
+}
+
+.msg-sender {
+  font-size: 110%;
 }
