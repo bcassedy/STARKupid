@@ -7,6 +7,8 @@ development:
   adapter: postgresql
   database: starkcupid_development
   host: localhost
+  user: postgres
+  password: shipit
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

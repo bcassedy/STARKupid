@@ -1,0 +1,8 @@
+<h1>My Messages</h1>
+<div class='col-xs-6 col-xs-offset-2'>
+<% messages.each(function (message) { %>
+  <p>
+    <%= message.escape('title') %>
+  </p>
+<% }); %>
+</div>

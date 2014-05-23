@@ -12,8 +12,6 @@ window.STARKupid = {
     Backbone.Model.prototype.isNew = function() {
       return this.get('created_at') == null;
     }
-
-    Backbone.history.start();
   }
 };
 

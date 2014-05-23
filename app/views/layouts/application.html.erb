@@ -15,6 +15,9 @@
       <ul class='nav'>
       <% if current_user %>
         <script>
+          $(document).ready( function () {
+            Backbone.history.start();
+          });
           var currentUserUsername = '<%= current_user.username %>';
           </script>
         <li>
@@ -23,6 +26,11 @@
           session_url,
           method: :delete,
           class: 'navbar-right navbar-link') %>
+        </li>
+        <li>
+          <a class='navbar-right navbar-link' href='#/profile/edit'>
+            Profile
+          </a>
         </li>
       <% else %>
         <li>
@@ -39,7 +47,7 @@
   <div id='left-nav'>
     <ul class='nav nav-pills nav-stacked'>
       <li class='left-nav'><a href='#'>Browse Matches</a></li>
-      <li class='left-nav'><a href='#'>Messages</a></li>
+      <li class='left-nav'><a href='#/messages'>Messages</a></li>
       <li class='left-nav'><a href='#'>Visitors</a></li>
     </ul>
   </div>
