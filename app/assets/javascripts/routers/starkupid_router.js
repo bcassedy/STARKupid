@@ -6,7 +6,9 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
 
   routes: {
     '': 'profilesIndex',
+    'profiles/search': 'searchProfiles',
     'profiles/:username': 'showProfile',
+    'profiles/search/results': 'searchResults',
     'profile/new': 'newProfile',
     'profile/edit': 'editProfile',
     'messages': 'messagesIndex',
@@ -19,6 +21,18 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
       collection: this.profiles
     });
     this._swapView(indexView);
+  },
+
+  searchProfiles: function () {
+    var searchView = new STARKupid.Views.ProfilesSearch();
+    this._swapView(searchView);
+  },
+
+  searchResults: function () {
+    var searchResultsView = new STARKupid.Views.ProfilesIndex({
+      collection: STARKupid.Collections.searchResults
+    });
+    this._swapView(searchResultsView);
   },
 
   showProfile: function (username) {
