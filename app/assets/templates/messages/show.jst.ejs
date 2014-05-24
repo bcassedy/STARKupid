@@ -3,5 +3,14 @@
     <p>From: <%= message.escape('sender') %></p>
     <p>Title: <%= message.escape('title') %></p>
     <p><%= message.escape('body') %></p>
+
+    <form id='msg-form' role='form'>
+      <input type='hidden' name='message[title]' value="RE: <%= message.escape('title') %>">
+      <div class='form-group'>
+        <label for="msg_body">Reply:</label>
+          <textarea name="message[body]" id='msg_body' class='form-control'></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send</button>
+    </form>
   </div>
 </div>
