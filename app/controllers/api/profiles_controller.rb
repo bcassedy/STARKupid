@@ -31,7 +31,7 @@ module Api
     end
 
     def search
-      @profiles = Profile.where(['username LIKE ?', params[:query]])
+      @profiles = Profile.search_by_username(params[:query])
       render :index
     end
 

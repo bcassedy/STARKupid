@@ -3,7 +3,7 @@
      <h1>Matches</h1>
     <div class='panel'>
       <% profiles.each(function (profile) { %>
-        <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-3'>
+        <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-3 profile-div'>
           <div class='index-photo-div'>
             <img
               src="<%= profile.escape('photo_url') %>"
