@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140524221000) do
   create_table "answer_choices", force: true do |t|
     t.string   "choice",      null: false
     t.integer  "question_id", null: false
+    t.integer  "value",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

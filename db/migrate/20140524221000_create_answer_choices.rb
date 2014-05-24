@@ -3,6 +3,7 @@ class CreateAnswerChoices < ActiveRecord::Migration
     create_table :answer_choices do |t|
       t.string :choice, null: false
       t.integer :question_id, null: false
+      t.integer :value, null: false
 
       t.timestamps
     end
