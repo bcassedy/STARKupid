@@ -1,0 +1,1 @@
+json.array! @visitors, partial: 'api/profiles/profile', as: :profile

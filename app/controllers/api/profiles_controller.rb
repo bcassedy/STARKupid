@@ -10,7 +10,7 @@ module Api
 
     def show
       @profile = Profile.find_by_username(params[:id])
-      Visit.create(visitor_id: current_user.profile.id, profile_id: @profile.id)
+      Visit.create_or_update(current_user.profile.id, @profile.id)
       render partial: 'api/profiles/profile', locals: { profile: @profile }
     end
 
