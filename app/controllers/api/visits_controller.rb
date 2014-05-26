@@ -5,5 +5,6 @@ module Api
         .where(profile_id: current_user.profile.id)
       @visitors = visits.map { |visit| visit.visitor }
       render :index
+    end
   end
 end

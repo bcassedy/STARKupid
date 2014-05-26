@@ -15,7 +15,7 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
     'messages/:id': 'messageShow',
     'questions': 'questionsIndex',
     'questions/:id': 'questionShow',
-    'visits': 'visitsIndex'
+    'visitors': 'visitorsIndex'
   },
 
   profilesIndex: function () {
@@ -111,10 +111,18 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
     });
   },
 
-  visitsIndex: function () {
+  visitorsIndex: function () {
+    var that = this;
     var visitors = STARKupid.Collections.visitors = 
       (STARKupid.Collections.visitors || new STARKupid.Collections.Visitors());
-
+    var visitorsIndexView = new STARKupid.Views.VisitorsIndex({
+      collection: visitors
+    });
+    visitors.fetch({
+      success: function () {
+        that._swapView(visitorsIndexView);
+      }
+    });
   },
 
   _swapView: function (view) {
