@@ -1,6 +1,9 @@
 STARKupid::Application.routes.draw do
   root to: 'sessions#new'
   namespace :api, defaults: { format: :json } do
+    resources :questions, only: [:index, :show] do
+      resources :answered_questions, only: [:create]
+    end
     post 'profiles/search', to: 'profiles#search', as: 'profiles_search'
     resources :profiles, except: [:new, :edit] do
       resources :messages, only: [:create]

@@ -6,6 +6,7 @@ STARKupid.Views.QuestionShow = Backbone.View.extend({
   template: JST['questions/show'],
 
   render: function () {
+    debugger
     var renderedContent = this.template({
       question: this.model
     });
@@ -17,8 +18,9 @@ STARKupid.Views.QuestionShow = Backbone.View.extend({
   submitQuestionForm: function (event) {
     event.preventDefault();
     var answerData = $(event.currentTarget).serializeJSON();
+    var url = 'api/questions/' + this.model.id + '/answered_questions'
     $.ajax({
-      url: 'api/answered_questions',
+      url: url,
       type: 'POST',
       data: answerData
     });

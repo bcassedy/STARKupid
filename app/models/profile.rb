@@ -26,8 +26,13 @@
 class Profile < ActiveRecord::Base
   validates :username, :age, :gender, :location, :user_id, presence: true
   belongs_to :user
+  has_many :question_responses, class_name: 'AnsweredQuestion'
 
   def self.search_by_username(username)
     Profile.where(['username LIKE ?', "%#{username}%"])
+  end
+
+  def match_percentage(other_profile)
+
   end
 end
