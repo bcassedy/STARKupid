@@ -30,4 +30,14 @@ $(document).ready(function () {
           top: $('.navbar').height() - $('#left-nav').scrollTop()
         }
   });
+
+  $('.left-nav').on('click', function (event) {
+    $('.active').removeClass('active');
+    $(event.target).addClass('active');
+  });
+
+  $('.navbar-brand').on('click', function (event) {
+    $('.active').removeClass('active');
+    $('.matches').addClass('active');
+  });
 });

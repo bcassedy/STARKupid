@@ -20,6 +20,7 @@
 #  income         :string(255)
 #  created_at     :datetime
 #  updated_at     :datetime
+#  photo_url      :string(255)
 #
 
 class Profile < ActiveRecord::Base

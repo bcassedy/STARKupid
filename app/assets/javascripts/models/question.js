@@ -1,0 +1,1 @@
+STARKupid.Models.Question = Backbone.Model.extend({});

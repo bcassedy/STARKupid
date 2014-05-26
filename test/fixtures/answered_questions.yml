@@ -1,11 +1,11 @@
 # == Schema Information
 #
-# Table name: answer_choices
+# Table name: answered_questions
 #
 #  id          :integer          not null, primary key
-#  choice      :string(255)      not null
+#  profile_id  :integer          not null
 #  question_id :integer          not null
-#  value       :integer          not null
+#  answer_id   :integer          not null
 #  created_at  :datetime
 #  updated_at  :datetime
 #
