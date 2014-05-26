@@ -48,10 +48,6 @@ h1 {
   font-size: medium;
 }
 
-.left-nav:hover {
-
-}
-
 .form-container {
   text-align: center;
   padding: 10px;
@@ -156,4 +152,11 @@ h1 {
 
 .active {
   color: yellow;
+}
+
+.button-delete {
+  float: right;
+  padding-top: 15px;
+  padding-right: 15px;
+  font-size: 150%;
 }

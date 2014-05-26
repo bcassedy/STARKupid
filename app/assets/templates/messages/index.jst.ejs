@@ -1,21 +1,26 @@
 <div class='row'>
   <h1>My Messages</h1>
-  <div class='col-xs-10 col-xs-offset-2'>
+  <div class='col-xs-10 col-xs-offset-2' id='messages'>
+    <div class='row'>
+    </div>
   <% messages.each(function (message) { %>
-    <a href='#/messages/<%= message.id %>'>
-      <div class='msg-row row'>
-        <div class='mini-photo col-xs-6'>
-        <img 
-          src="<%= message.escape('sender_photo') %>"
-          class="img-responsive img-circle"
-          >
+    <div class='msg-row row'>
+      <div class='mini-photo col-xs-6'>
+      <img 
+        src="<%= message.escape('sender_photo') %>"
+        class="img-responsive img-circle"
+        >
       </div>
-        <div class='msg-details col-xs-6'>
-          <p class='msg-sender'><%= message.escape('sender') %></p>
-          <p class='msg-title'><%= message.escape('title') %></p>
-        </div>
+    <a href='#/messages/<%= message.id %>'>
+      <div class='msg-details col-xs-6'>
+        <p class='msg-sender'><%= message.escape('sender') %></p>
+        <p class='msg-title'><%= message.escape('title') %></p>
       </div>
     </a>
+      <div class='button-delete hidden glyphicon glyphicon-trash'
+        data-id='<%= message.id %>'>
+      </div>
+    </div>
   <% }); %>
   </div>
 </div>

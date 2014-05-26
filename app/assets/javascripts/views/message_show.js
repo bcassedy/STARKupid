@@ -24,6 +24,7 @@ STARKupid.Views.MessageShow = Backbone.View.extend({
       data: messageData,
       success: function () {
         $('form').prepend('<div class="alert alert-success">Message Sent</div>');
+        $('#msg_body').val('')
       }
     });
   }
