@@ -1,5 +1,13 @@
 <div class='row'>
   <div class='col-xs-6 col-xs-offset-2'>
+    <div class='photo'>
+      <img
+        src="<%= message.escape('sender_photo') %>"
+        class='rounded-photo'
+        alt='Photo'
+        height='190'
+        width='190'>
+    </div>
     <p>From: <%= message.escape('sender') %></p>
     <p>Title: <%= message.escape('title') %></p>
     <p><%= message.escape('body') %></p>

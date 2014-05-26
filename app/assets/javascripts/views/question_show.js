@@ -21,7 +21,10 @@ STARKupid.Views.QuestionShow = Backbone.View.extend({
     $.ajax({
       url: url,
       type: 'POST',
-      data: answerData
+      data: answerData,
+      success: function () {
+        Backbone.history.navigate('#/questions');
+      }
     });
   }
 });

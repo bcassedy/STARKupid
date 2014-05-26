@@ -27,6 +27,8 @@ class Profile < ActiveRecord::Base
   validates :username, :age, :gender, :location, :user_id, presence: true
   belongs_to :user
   has_many :question_responses, class_name: 'AnsweredQuestion'
+  has_many :visits
+  has_many :visitors, through: :visits, source: :visitor
   attr_accessor :match_percentage
 
   def self.search_by_username(username)
@@ -53,7 +55,7 @@ class Profile < ActiveRecord::Base
     calculate_match_rating(
       answered_questions_in_common,
       match_answered_questions_in_common
-    ) 
+    )
   end
 
   private
