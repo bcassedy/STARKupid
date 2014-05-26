@@ -7,7 +7,8 @@ STARKupid.Views.MessageShow = Backbone.View.extend({
 
   render: function () {
     var renderedContent = this.template({
-      message: this.model
+      message: this.model,
+      read: this.read
     });
     this.$el.html(renderedContent);
 

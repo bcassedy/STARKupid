@@ -81,9 +81,11 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
   messageShow: function (id) {
     var message = STARKupid.Collections.messages.get(id);
     var messageShowView = new STARKupid.Views.MessageShow({
-      model: message
+      model: message,
+      read: message.get('read')
     });
     this._swapView(messageShowView);
+    message.fetch();
   },
 
   questionsIndex: function () {

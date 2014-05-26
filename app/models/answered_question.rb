@@ -11,6 +11,7 @@
 #
 
 class AnsweredQuestion < ActiveRecord::Base
+  validates :profile_id, uniqueness: { scope: :question_id }
   belongs_to :question
   belongs_to :profile
   belongs_to :answer, class_name: 'AnswerChoice', foreign_key: :answer_id

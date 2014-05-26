@@ -6,7 +6,8 @@ json.extract!(
   :title,
   :body,
   :created_at,
-  :updated_at
+  :updated_at,
+  :read
 )
 json.sender message.sender.username
 json.sender_photo message.sender.profile.photo_url

@@ -3,6 +3,7 @@ module Api
     def index
       @profiles = Profile.all
       @profiles.each do |profile|
+        break unless current_user.profile
         profile.match_percentage = current_user.profile.match(profile)
       end
       render :index

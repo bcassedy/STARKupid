@@ -14,6 +14,8 @@ module Api
 
     def show
       @message = Message.find(params[:id])
+      @message.update_attributes(read: true)
+      render partial: 'api/messages/message', locals: { message: @message }
     end
 
     def index
@@ -22,7 +24,6 @@ module Api
     end
 
     def destroy
-      # allow user to delete their messages from the DB or persist and hide?
       @message = Message.find(params[:id])
       @message.destroy
       render partial: 'api/messages/message', locals: { message: @message }

@@ -10,5 +10,6 @@ class CreateAnsweredQuestions < ActiveRecord::Migration
 
     add_index :answered_questions, :profile_id
     add_index :answered_questions, :question_id
+    add_index :answered_questions, [:profile_id, :question_id], unique: true
   end
 end

@@ -4,6 +4,11 @@
     <div class='row'>
     </div>
   <% messages.each(function (message) { %>
+    <% if (message.get("read")) { %>
+      <% var cssClass = "unread" %>
+    <% } else { %>
+      <% var cssClass = "read" %>
+    <% } %>
     <div class='msg-row row'>
       <div class='mini-photo col-xs-6'>
       <img 
@@ -12,7 +17,7 @@
         >
       </div>
     <a href='#/messages/<%= message.id %>'>
-      <div class='msg-details col-xs-6'>
+      <div class='msg-details col-xs-6 <%= cssClass %>'>
         <p class='msg-sender'><%= message.escape('sender') %></p>
         <p class='msg-title'><%= message.escape('title') %></p>
       </div>

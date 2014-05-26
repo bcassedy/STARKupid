@@ -78,6 +78,7 @@ h1 {
 
 .index-photo {
   max-height: 100%;
+  max-width: 100%;
   border-radius: 5px;
 }
 
@@ -168,4 +169,8 @@ h1 {
 
 .rounded-photo {
   border-radius: 5px;
+}
+
+.unread {
+  font-weight: bolder;
 }

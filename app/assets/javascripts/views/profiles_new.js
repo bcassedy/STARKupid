@@ -18,7 +18,7 @@ STARKupid.Views.ProfileNew = Backbone.View.extend({
     event.preventDefault();
     var profileData = $(event.target).serializeJSON();
     var collection = this.collection;
-    this.collection.create(profileData)
+    this.model.save(profileData)
     collection.last().on('sync', function () {
       Backbone.history.navigate('#/profiles/' + this.escape('username'));
     });

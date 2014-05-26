@@ -40,6 +40,7 @@ class Profile < ActiveRecord::Base
     match_answered_questions_ids = get_answered_question_ids(
       match_answered_questions
     )
+    # debugger
     answered_questions = sort_responses(self)
     answered_questions_in_common = get_responses_in_common(
       answered_questions,
