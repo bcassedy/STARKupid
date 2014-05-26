@@ -2,6 +2,9 @@ module Api
   class ProfilesController < ApplicationController
     def index
       @profiles = Profile.all
+      @profiles.each do |profile|
+        profile.match_percentage = current_user.profile.match(profile)
+      end
       render :index
     end
 

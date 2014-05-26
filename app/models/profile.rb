@@ -27,6 +27,7 @@ class Profile < ActiveRecord::Base
   validates :username, :age, :gender, :location, :user_id, presence: true
   belongs_to :user
   has_many :question_responses, class_name: 'AnsweredQuestion'
+  attr_accessor :match_percentage
 
   def self.search_by_username(username)
     Profile.where(['username LIKE ?', "%#{username}%"])
@@ -52,7 +53,7 @@ class Profile < ActiveRecord::Base
     calculate_match_rating(
       answered_questions_in_common,
       match_answered_questions_in_common
-    )
+    ) 
   end
 
   private
@@ -69,11 +70,14 @@ class Profile < ActiveRecord::Base
         match_answers_in_common[i].answer.value).abs
     end
     # get avg dif(lower is better) 1 - avg dif/4 gets match %
-    1 - (response_diffs_sum.to_f / match_answers_in_common.count / 4)
+    ((1 - (response_diffs_sum.to_f /
+      match_answers_in_common.count / 4)) * 100).round
   end
 
   def sort_responses(profile)
-    profile.question_responses.sort_by do |response|
+    responses = Profile.includes(question_responses: :answer)
+      .find(profile.id).question_responses
+    responses.sort_by do |response|
       response.question_id
     end
   end
