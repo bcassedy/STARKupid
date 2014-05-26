@@ -1,19 +1,21 @@
 <div class='row'>
   <div class='col-xs-8 col-xs-offset-2'>
     <h3><%= question.escape('title') %></h3>
-    <form class='question-form' role='form'>
-      <% _.each(question.answerChoices(), function (answerChoice) { %>
-        <div class='form-group'>
-          <label><%= answerChoice.choice %>
-          <input 
-          type="radio"
-          class='form-control'
-          name='answered_question[answer_id]'
-          value='<%= answerChoice.id %>'>
-          </label>
-        </div>
-      <% }); %>
-      <input type="submit" class='btn btn-primary' value='Submit'>
-    </form>
+    <div class='col-xs-10 survey-div'>
+      <form class='question-form' role='form'>
+        <% _.each(question.answerChoices(), function (answerChoice) { %>
+          <div class='form-group'>
+            <label><%= answerChoice.choice %>
+            <input 
+            type="radio"
+            class='form-control'
+            name='answered_question[answer_id]'
+            value='<%= answerChoice.id %>'>
+            </label>
+          </div>
+        <% }); %>
+        <input type="submit" class='btn btn-primary' value='Submit'>
+      </form>
+    </div>
   </div>
 </div>

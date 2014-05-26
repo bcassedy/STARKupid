@@ -6,7 +6,6 @@ STARKupid.Views.QuestionShow = Backbone.View.extend({
   template: JST['questions/show'],
 
   render: function () {
-    debugger
     var renderedContent = this.template({
       question: this.model
     });

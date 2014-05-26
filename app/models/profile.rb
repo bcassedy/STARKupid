@@ -32,7 +32,55 @@ class Profile < ActiveRecord::Base
     Profile.where(['username LIKE ?', "%#{username}%"])
   end
 
-  def match_percentage(other_profile)
+  def match(other_profile)
+    match_answered_questions = sort_responses(other_profile)
+    match_answered_questions_ids = get_answered_question_ids(
+      match_answered_questions
+    )
+    answered_questions = sort_responses(self)
+    answered_questions_in_common = get_responses_in_common(
+      answered_questions,
+      match_answered_questions_ids
+    )
+    question_ids_in_common = get_answered_question_ids(
+      answered_questions_in_common
+    )
+    match_answered_questions_in_common = get_responses_in_common(
+      match_answered_questions,
+      question_ids_in_common
+    )
+    calculate_match_rating(
+      answered_questions_in_common,
+      match_answered_questions_in_common
+    )
+  end
 
+  private
+
+  def get_answered_question_ids(answered_questions)
+    answered_questions.map { |resp| resp.question_id }
+  end
+
+  def calculate_match_rating(answers_in_common, match_answers_in_common)
+    return 0 if match_answers_in_common.count < 5
+    response_diffs_sum = 0
+    answers_in_common.each_with_index do |resp, i|
+      response_diffs_sum += (resp.answer.value -
+        match_answers_in_common[i].answer.value).abs
+    end
+    # get avg dif(lower is better) 1 - avg dif/4 gets match %
+    1 - (response_diffs_sum.to_f / match_answers_in_common.count / 4)
+  end
+
+  def sort_responses(profile)
+    profile.question_responses.sort_by do |response|
+      response.question_id
+    end
+  end
+
+  def get_responses_in_common(responses, question_ids)
+    responses.select do |resp|
+      question_ids.include?(resp.question_id)
+    end
   end
 end

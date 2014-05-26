@@ -18,5 +18,6 @@ json.extract!(
   :income,
   :created_at,
   :updated_at,
-  :photo_url
+  :photo_url,
+  :match_percentage
 )
