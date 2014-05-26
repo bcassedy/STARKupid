@@ -1,7 +1,7 @@
 module Api
   class QuestionsController < ApplicationController
     def index
-      @questions = Question.includes(:all
+      @questions = Question.all
       render :index
     end
 
