@@ -10,6 +10,7 @@
     <div class='profile-header'>
       <h2><%= profile.escape('username') %></h2>
       <p><%= profile.escape('age') + ' | ' + profile.escape('gender') + ' | ' + profile.escape('location') %></p>
+      <div><%= profile.escape('match_percentage') %> % Match</div>
     </div>
     <div id='send-msg' class='profile-header msg-button'>
       Send a Message
