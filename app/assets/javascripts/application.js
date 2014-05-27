@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.draggable
+//= require jquery.ui.droppable
 //= require serializejson
 //= require bootstrap
 //= require underscore
@@ -40,4 +42,19 @@ $(document).ready(function () {
     $('.active').removeClass('active');
     $('.matches').addClass('active');
   });
+
+  $('#favorites').droppable({
+    drop: function (event, ui) {
+      var favoriteData = { username: ui.draggable.data('username') };
+      ui.draggable.hide();
+      $.ajax({
+        url: 'api/favorites',
+        type: 'POST',
+        data: favoriteData,
+        success: function (resp) {
+          
+        }
+      });
+    }
+  })
 });

@@ -29,6 +29,8 @@ class Profile < ActiveRecord::Base
   has_many :question_responses, class_name: 'AnsweredQuestion'
   has_many :visits
   has_many :visitors, through: :visits, source: :visitor
+  has_many :favorites
+  has_many :favorited_profiles, through: :favorites, source: :favorite
   attr_accessor :match_percentage
 
   def self.search_by_username(username)

@@ -13,6 +13,9 @@ STARKupid.Views.ProfilesIndex = Backbone.View.extend({
       header: 'Matches'
     });
     this.$el.html(renderedContent);
+    $('.profile-div').draggable({
+      revert: 'invalid'
+    });
 
     return this;
   }
