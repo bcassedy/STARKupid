@@ -39,8 +39,10 @@
               },
               20000
             );
+            STARKupid.Collections.favorites = (STARKupid.Collections.favorites || new STARKupid.Collections.Favorites());
+            STARKupid.Collections.favorites.fetch();
           }
-          </script>
+        </script>
         <li>
           <%= link_to(
           'Sign Out',

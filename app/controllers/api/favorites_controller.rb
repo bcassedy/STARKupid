@@ -1,7 +1,6 @@
 module Api
   class FavoritesController < ApplicationController
     def index
-      debugger
       @favorites = current_user.profile.favorited_profiles
       @favorites.each do |profile|
         break unless current_user.profile
