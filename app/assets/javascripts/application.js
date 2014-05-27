@@ -43,6 +43,11 @@ $(document).ready(function () {
     $('.matches').addClass('active');
   });
 
+  $('.search-btn').on('click', function (event) {
+    var searchView = new STARKupid.Views.ProfilesSearch();
+    $('body').prepend(searchView.render().$el);
+  });
+
   $('#favorites').droppable({
     drop: function (event, ui) {
       var favoriteData = { username: ui.draggable.data('username') };

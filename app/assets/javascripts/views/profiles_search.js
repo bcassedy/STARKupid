@@ -1,6 +1,7 @@
 STARKupid.Views.ProfilesSearch = Backbone.View.extend({
   events: {
-    'submit #search-form': 'search'
+    'submit #search-form': 'search',
+    'keyup #search-form': 'exit',
   },
 
   className: 'search-modal',
@@ -30,5 +31,11 @@ STARKupid.Views.ProfilesSearch = Backbone.View.extend({
         Backbone.history.navigate('#/profiles/search/results');
       }
     });
-  }
+  },
+
+  exit: function (event) {
+    if (event.which === 27) {
+      this.remove();
+    }
+  },
 });

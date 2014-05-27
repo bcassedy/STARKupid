@@ -2,10 +2,7 @@ module Api
   class ProfilesController < ApplicationController
     def index
       @profiles = Profile.all
-      @profiles.each do |profile|
-        break unless current_user.profile
-        profile.match_percentage = current_user.profile.match(profile)
-      end
+      assign_match_percent
       render :index
     end
 
@@ -37,6 +34,7 @@ module Api
 
     def search
       @profiles = Profile.search_by_username(params[:query])
+      assign_match_percent
       render :index
     end
 
@@ -56,5 +54,11 @@ module Api
       )
     end
 
+    def assign_match_percent
+      @profiles.each do |profile|
+        break unless current_user.profile
+        profile.match_percentage = current_user.profile.match(profile)
+      end
+    end
   end
 end

@@ -136,6 +136,7 @@ h1 {
 
 .search-modal {
   position: absolute;
+  z-index: 10;
   top: 0px;
   left: 0px;
   height: 100%;
@@ -177,4 +178,9 @@ h1 {
 
 .unread-msgs {
   color: red;
+}
+
+#favorites {
+  padding-top: 50px;
+  height: 200px;
 }
