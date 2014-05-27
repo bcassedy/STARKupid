@@ -9,7 +9,8 @@ STARKupid.Views.ProfilesIndex = Backbone.View.extend({
 
   render: function () {
     var renderedContent = this.template({
-      profiles: this.collection
+      profiles: this.collection,
+      header: 'Matches'
     });
     this.$el.html(renderedContent);
 
