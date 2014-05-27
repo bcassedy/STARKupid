@@ -143,6 +143,6 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
       this.currentView.remove();
     }
     this.currentView = view;
-    this.$rootEl.html(view.render().$el);
+    this.$rootEl.html(view.render().$el).hide().fadeIn();
   }
 });
