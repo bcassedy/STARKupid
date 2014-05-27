@@ -1,7 +1,7 @@
 module Api
   class ProfilesController < ApplicationController
     def index
-      @profiles = Profile.all
+      @profiles = Profile.all.page(params[:page])
       assign_match_percent
       render :index
     end
@@ -33,7 +33,7 @@ module Api
     end
 
     def search
-      @profiles = Profile.search_by_username(params[:query])
+      @profiles = Profile.search_by_username(params[:query]).page(params[:page])
       assign_match_percent
       render :index
     end

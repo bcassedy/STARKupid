@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'bcrypt'
 
+gem 'kaminari'
+
 gem 'annotate'
 
 gem 'backbone-on-rails'

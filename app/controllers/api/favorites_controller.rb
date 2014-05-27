@@ -1,7 +1,7 @@
 module Api
   class FavoritesController < ApplicationController
     def index
-      @favorites = current_user.profile.favorited_profiles
+      @favorites = current_user.profile.favorited_profiles.page(params[:page])
       @favorites.each do |profile|
         break unless current_user.profile
         profile.match_percentage = current_user.profile.match(profile)

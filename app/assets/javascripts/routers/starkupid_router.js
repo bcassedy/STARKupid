@@ -19,7 +19,11 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
   },
 
   profilesIndex: function () {
-    this.profiles.fetch();
+    this.profiles.fetch({
+      remove: false,
+
+      data: { page: 1 }
+    });
     var indexView = new STARKupid.Views.ProfilesIndex({
       collection: this.profiles
     });
@@ -46,19 +50,17 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
     var profile = new STARKupid.Models.Profile();
     var newView = new STARKupid.Views.ProfileNew({
       model: profile,
-      collection: this.profiles
     });
     this._swapView(newView);
   },
 
   editProfile: function () {
-    var profile = this.profiles.getOrFetch(currentUserUsername);
-    if (profile.isNew()) {
+    if (!currentUserProfile) {
       Backbone.history.navigate('#/profile/new');
       return;
     }
     var editView = new STARKupid.Views.ProfileEdit({
-      model: profile
+      model: currentUserProfile
     });
     this._swapView(editView);
   },
@@ -116,6 +118,10 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
       collection: visitors
     });
     visitors.fetch({
+      remove: false,
+
+      data: { page: 1 },
+
       success: function () {
         that._swapView(visitorsIndexView);
       }
@@ -125,7 +131,11 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
   favoritesIndex: function () {
     var favorites = STARKupid.Collections.favorites = 
       (STARKupid.Collections.favorites || new STARKupid.Collections.Favorites());
-    favorites.fetch();
+    favorites.fetch({
+      remove: false,
+
+      data: { page: 1 }
+    });
     var favoritesIndexView = new STARKupid.Views.FavoritesIndex({
       collection: favorites
     });

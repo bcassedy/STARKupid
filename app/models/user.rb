@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6 }
   before_validation :ensure_session_token
-  has_one :profile
+  has_one :profile, dependent: :destroy
   has_many :received_messages, class_name: 'Message', foreign_key: :receiver_id
   has_many :sent_messages, class_name: 'Message', foreign_key: :sender_id
 

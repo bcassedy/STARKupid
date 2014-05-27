@@ -10,5 +10,5 @@
 
 class Question < ActiveRecord::Base
   validates :title, presence: true
-  has_many :answer_choices
+  has_many :answer_choices, dependent: :destroy
 end

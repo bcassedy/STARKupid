@@ -15,12 +15,13 @@ STARKupid.Views.ProfileNew = Backbone.View.extend({
   },
 
   submit: function (event) {
+    var that = this;
     event.preventDefault();
     var profileData = $(event.target).serializeJSON();
-    var collection = this.collection;
-    this.model.save(profileData)
-    collection.last().on('sync', function () {
-      Backbone.history.navigate('#/profiles/' + this.escape('username'));
+    this.model.save(profileData, {
+      success: function () {
+        Backbone.history.navigate('#/profiles/' + this.escape('username'));
+      }
     });
   }
 });

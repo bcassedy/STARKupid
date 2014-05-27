@@ -1,6 +1,6 @@
 STARKupid.Views.ProfileShow = Backbone.View.extend({
   intialize: function () {
-    this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'change', this.render);
   },
 
   events: {
