@@ -5,9 +5,12 @@ module Api
       @message.sender_id = current_user.id
       receiver = User.find_by_username(params[:profile_id])
       @message.receiver_id = receiver.id
+      @message.update_attributes(read: false)
+      p @message
       if @message.save
         render partial: 'api/messages/message', locals: { message: @message }
       else
+        p @message.errors.full_messages
         render json: { errors: @message.errors.full_messages }, status: 422
       end
     end

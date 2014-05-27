@@ -19,6 +19,27 @@
             Backbone.history.start();
           });
           var currentUserUsername = '<%= current_user.username %>';
+          if (currentUserUsername) {
+            STARKupid.Collections.messages = 
+              (STARKupid.Collections.messages || 
+                new STARKupid.Collections.Messages());
+            setInterval(
+              function () {
+                STARKupid.Collections.messages.fetch({
+                  success: function () {
+                    if (STARKupid.Collections.messages.some(function (message) {
+                      return message.get('read') === false;
+                    })) {
+                      $('.msg-nav').addClass('unread-msgs');
+                    } else {
+                      $('.msg-nav').removeClass('unread-msgs');
+                    }
+                  }
+                });
+              },
+              20000
+            );
+          }
           </script>
         <li>
           <%= link_to(
@@ -48,7 +69,7 @@
     <ul class='nav nav-pills nav-stacked'>
       <li class='left-nav'><a href='#' class='matches'>
         <span class='glyphicon glyphicon-heart'></span> Matches</a></li>
-      <li class='left-nav'><a href='#/messages'>
+      <li class='left-nav'><a href='#/messages' class='msg-nav'>
         <span class='glyphicon glyphicon-envelope'></span> Messages</a></li>
       <li class='left-nav'><a href='#/questions'>
         <span class='glyphicon glyphicon-question-sign'></span> Questions</a></li>
