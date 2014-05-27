@@ -2,6 +2,7 @@ STARKupid::Application.routes.draw do
   root to: 'sessions#new'
   namespace :api, defaults: { format: :json } do
     get 'visitors', to: 'visits#index'
+    resources :favorites, only: [:index, :create]
     resources :questions, only: [:index, :show] do
       resources :answered_questions, only: [:create]
     end

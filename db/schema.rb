@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140526222801) do
+ActiveRecord::Schema.define(version: 20140527002219) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20140526222801) do
 
   add_index "answered_questions", ["profile_id"], name: "index_answered_questions_on_profile_id", using: :btree
   add_index "answered_questions", ["question_id"], name: "index_answered_questions_on_question_id", using: :btree
+
+  create_table "favorites", force: true do |t|
+    t.integer  "favorited_id", null: false
+    t.integer  "profile_id",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "favorites", ["profile_id", "favorited_id"], name: "index_favorites_on_profile_id_and_favorited_id", unique: true, using: :btree
+  add_index "favorites", ["profile_id"], name: "index_favorites_on_profile_id", using: :btree
 
   create_table "messages", force: true do |t|
     t.integer  "sender_id",                   null: false
