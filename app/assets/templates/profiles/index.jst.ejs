@@ -1,7 +1,8 @@
 <div class='row'>
+  <div class='col-xs-10'>
+    <h1><%= header %></h1>
+  </div>
   <div class='col-xs-10 panel'>
-     <h1><%= header %></h1>
-    <div class='panel'>
       <% profiles.each(function (profile) { %>
         <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-3 profile-div' data-username='<%= profile.escape("username") %>'>
           <div class='index-photo-div'>
@@ -16,7 +17,5 @@
         </div>
         </a>
       <% }); %>
-    
-    </div>
   </div>
 </div>

@@ -83,7 +83,11 @@ h1 {
 }
 
 .navbar-brand {
-  padding: 5px 15px;
+  padding: 0px 15px;
+}
+
+.panel {
+  background-color: #2e4154;
 }
 
 .navbar {
@@ -110,7 +114,7 @@ h1 {
 }
 
 .msg-row {
-  background-color: #555;
+  background-color: #2e4154;
   margin-right: 40px;
 }
 
@@ -154,7 +158,7 @@ h1 {
 }
 
 .active {
-  color: #ffb100;
+  color: #df691a !important;
 }
 
 .button-delete {
@@ -162,6 +166,10 @@ h1 {
   padding-top: 15px;
   padding-right: 15px;
   font-size: 150%;
+}
+
+.button-delete:hover {
+  cursor: pointer;
 }
 
 .survey-div {
