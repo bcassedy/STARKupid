@@ -22,5 +22,11 @@ STARKupid.Collections.Profiles = Backbone.Collection.extend({
       }
     });
     return profile;
+  },
+
+  parse: function (response) {
+    this.total_pages = response.total_pages;
+
+    return response.models;
   }
 });
