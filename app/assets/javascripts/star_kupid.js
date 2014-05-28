@@ -9,9 +9,12 @@ window.STARKupid = {
       $rootEl: $('#content'),
       profiles: STARKupid.Collections.profiles
     });
-    Backbone.Model.prototype.isNew = function() {
+    Backbone.Model.prototype.isNew = function () {
       return this.get('created_at') == null;
-    }
+    };
+    Backbone.View.prototype.leave = function () {
+      this.remove();
+    };
   }
 };
 

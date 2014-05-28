@@ -26,6 +26,11 @@ STARKupid.Views.ProfilesIndex = Backbone.View.extend({
     return this;
   },
 
+  leave: function () {
+    $(window).off('scroll');
+    this.remove();
+  },
+
   nextPage: function () {
     if ($(window).scrollTop() + $(window).height() === $(document).height()) {
       if (this.collection.page < this.collection.total_pages) {

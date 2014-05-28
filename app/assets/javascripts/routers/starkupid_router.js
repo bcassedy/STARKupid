@@ -131,8 +131,14 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
   favoritesIndex: function () {
     var favorites = STARKupid.Collections.favorites = 
       (STARKupid.Collections.favorites || new STARKupid.Collections.Favorites());
+    var remove;
+    if (favorites.length === 0) {
+      remove = true;
+    } else {
+      remove = false;
+    }
     favorites.fetch({
-      remove: false,
+      remove: remove,
 
       data: { page: 1 }
     });
@@ -144,7 +150,7 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
 
   _swapView: function (view) {
     if (this.currentView) {
-      this.currentView.remove();
+      this.currentView.leave();
     }
     this.currentView = view;
     this.$rootEl.html(view.render().$el).hide().fadeIn();
