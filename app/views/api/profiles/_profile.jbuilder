@@ -19,6 +19,6 @@ json.extract!(
   :created_at,
   :updated_at,
   :photo_url,
-  :match_percentage
+  :match_percentage,
   :photos
 )

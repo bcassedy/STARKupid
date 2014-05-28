@@ -39,12 +39,13 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
   },
 
   showProfile: function (username) {
-    var profile = this.profiles.getOrFetch(username);
-    var showView = new STARKupid.Views.ProfileShow({
-      model: profile
+    var that = this;
+    this.profiles.getOrFetch(username, function (profile) {
+      var showView = new STARKupid.Views.ProfileShow({
+        model: profile
+      });
+      that._swapView(showView);
     });
-    profile.fetch();
-    this._swapView(showView);
   },
 
   newProfile: function () {

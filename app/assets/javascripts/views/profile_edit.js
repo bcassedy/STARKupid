@@ -2,9 +2,12 @@ STARKupid.Views.ProfileEdit = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
   },
+
   events: {
     'submit .profile-form': 'submit'
   },
+
+  className: 'row padded-top',
 
   template: JST['profiles/form'],
 

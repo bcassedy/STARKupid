@@ -1,17 +1,20 @@
 STARKupid.Views.ProfileShow = Backbone.View.extend({
   intialize: function () {
-    this.listenTo(this.model, 'change', this.render);
+    this.listenTo(this.model, 'sync change', this.render);
   },
+
+  className: 'row padded-top',
 
   events: {
     'click .msg-button': 'msgModal',
-    'submit #msg-form': 'submitMessage'
+    'submit #msg-form': 'submitMessage',
+    'mouseenter #lead-photo': 'showPhotos',
+    'mouseleave #lead-photo': 'showPhotos'
   },
 
   template: JST['profiles/show'],
 
   render: function () {
-    debugger;
     var renderedContent = this.template({
       profile: this.model
     });
@@ -38,5 +41,9 @@ STARKupid.Views.ProfileShow = Backbone.View.extend({
         $('.alert-success').toggleClass('hidden');
       }
     });
+  },
+
+  showPhotos: function (event) {
+    $('.sub-photo').toggleClass('hidden');
   }
 });

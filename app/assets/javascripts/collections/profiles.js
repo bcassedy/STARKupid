@@ -3,25 +3,23 @@ STARKupid.Collections.Profiles = Backbone.Collection.extend({
 
   url: 'api/profiles',
 
-  getOrFetch: function (username) {
+  getOrFetch: function (username, callback) {
     var that = this;
-    var profile = this.findWhere({
+    var user_profile = this.findWhere({
       username: username
     });
-    if (!profile) {
-      profile = new this.model({username: username});
+    if (!user_profile) {
+      user_profile = new STARKupid.Models.Profile({username: username});
     }
-    profile.fetch({
+    this.add(user_profile);
+    user_profile.fetch({
       success: function () {
-        if (profile.get('username') !== currentUserUsername) {
-          that.add(profile);
-        }
+        callback(user_profile);
       },
       error: function () {
         Backbone.history.navigate('#/', {trigger: true })
       }
     });
-    return profile;
   },
 
   parse: function (response) {

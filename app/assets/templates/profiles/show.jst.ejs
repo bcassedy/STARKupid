@@ -1,12 +1,21 @@
 
   <div class='col-xs-10 col-xs-offset-2'>
-    <div class='photo'>
+    <div class='photo' id='lead-photo'>
       <img
         src="<%= profile.escape('photo_url') %>"
         alt='Photo'
         height='190'
         width='190'>
     </div>
+    <% _.each(profile.photos(), function (photo) { %>
+      <div class='photo sub-photo hidden'>
+        <img
+          src="<%= photo.url %>"
+          alt='Photo'
+          height='190'
+          width='190'>
+      </div>
+    <% }); %>
     <div class='profile-header'>
       <h2><%= profile.escape('username') %></h2>
       <p><%= profile.escape('age') + ' | ' + profile.escape('gender') + ' | ' + profile.escape('location') %></p>
