@@ -131,17 +131,20 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
   favoritesIndex: function () {
     var favorites = STARKupid.Collections.favorites = 
       (STARKupid.Collections.favorites || new STARKupid.Collections.Favorites());
-    var remove;
-    if (favorites.length === 0) {
-      remove = true;
+    var page = (favorites.page || 1);
+    if (!favorites.total_pages) {
+      favorites.fetch({
+        data: { page: page }
+      });
     } else {
-      remove = false;
-    }
-    favorites.fetch({
-      remove: remove,
+      if (favorites.total_pages >= page) {
+        favorites.fetch({
+          remove: false,
 
-      data: { page: 1 }
-    });
+          data: { page: page }
+        });
+      }
+    }
     var favoritesIndexView = new STARKupid.Views.FavoritesIndex({
       collection: favorites
     });
