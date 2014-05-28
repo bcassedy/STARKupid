@@ -14,7 +14,7 @@ module Api
       @favorite = Favorite.new(favorited_id: profile.id)
       @favorite.profile_id = current_user.profile.id
       if @favorite.save
-        render json: @favorite
+        render partial: 'api/profiles/profile', locals: { profile: profile }
       else
         render json: @favorite.errors.full_messages
       end

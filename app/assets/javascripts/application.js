@@ -57,6 +57,7 @@ $(document).ready(function () {
         type: 'POST',
         data: favoriteData,
         success: function (resp) {
+          debugger
           var favorite = new STARKupid.Models.Profile(resp);
           STARKupid.Collections.favorites.add(favorite);
         }
