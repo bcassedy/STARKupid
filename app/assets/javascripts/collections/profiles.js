@@ -25,7 +25,10 @@ STARKupid.Collections.Profiles = Backbone.Collection.extend({
   },
 
   parse: function (response) {
-    this.total_pages = response.total_pages;
+    if (response.total_pages) {
+      this.total_pages = response.total_pages;
+      delete response.total_pages;
+    }
 
     return response.models;
   }

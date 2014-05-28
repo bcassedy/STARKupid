@@ -4,7 +4,10 @@ STARKupid.Collections.Favorites = Backbone.Collection.extend({
   url: 'api/favorites',
 
   parse: function (response) {
-    this.total_pages = response.total_pages;
+    if (response.total_pages) {
+      this.total_pages = response.total_pages;
+      delete response.total_pages;
+    }
 
     return response.models;
   }

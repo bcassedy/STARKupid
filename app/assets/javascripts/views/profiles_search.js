@@ -1,4 +1,9 @@
+
 STARKupid.Views.ProfilesSearch = Backbone.View.extend({
+  initialize: function () {
+    this.listenTo(this.collection, 'sync', this.render);
+  },
+
   events: {
     'submit #search-form': 'search',
     'keyup #search-form': 'exit',
@@ -19,14 +24,13 @@ STARKupid.Views.ProfilesSearch = Backbone.View.extend({
     event.preventDefault();
     var view = this;
     var searchTerms = $(event.target).serializeJSON();
-    STARKupid.Collections.searchResults = new STARKupid.Collections.Profiles();
     $.ajax({
       url: '/api/profiles/search',
       method: 'POST',
       data: searchTerms,
       success: function (resp) {
-        STARKupid.Collections.searchResults.set(resp);
-        STARKupid.Collections.profiles.set(resp);
+        view.collection.set(resp.models);
+        STARKupid.Collections.profiles.add(resp.models);
         view.remove();
         Backbone.history.navigate('#/profiles/search/results');
       }
@@ -36,6 +40,7 @@ STARKupid.Views.ProfilesSearch = Backbone.View.extend({
   exit: function (event) {
     if (event.which === 27) {
       this.remove();
+      Backbone.history.history.back();
     }
   },
 });

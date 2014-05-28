@@ -27,6 +27,7 @@
 //= require_tree .
 
 $(document).ready(function () {
+  STARKupid.Collections.searchResults = new STARKupid.Collections.Profiles();
   $('#left-nav').affix({
         offset: {
           top: $('.navbar').height() - $('#left-nav').scrollTop()
@@ -44,7 +45,9 @@ $(document).ready(function () {
   });
 
   $('.search-btn').on('click', function (event) {
-    var searchView = new STARKupid.Views.ProfilesSearch();
+    var searchView = new STARKupid.Views.ProfilesSearch({
+      collection: STARKupid.Collections.searchResults
+    });
     $('body').prepend(searchView.render().$el);
   });
 

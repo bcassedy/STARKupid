@@ -31,8 +31,9 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
   },
 
   searchResults: function () {
+    var collection = STARKupid.Collections.searchResults;
     var searchResultsView = new STARKupid.Views.ProfilesIndex({
-      collection: STARKupid.Collections.searchResults
+      collection: collection
     });
     this._swapView(searchResultsView);
   },
