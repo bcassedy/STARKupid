@@ -33,7 +33,6 @@ module Api
     end
 
     def search
-      debugger
       @profiles = Profile.search_by_username(params[:query])
       assign_match_percent
       render :search_results
