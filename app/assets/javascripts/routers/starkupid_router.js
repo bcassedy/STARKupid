@@ -114,18 +114,24 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
     var that = this;
     var visitors = STARKupid.Collections.visitors = 
       (STARKupid.Collections.visitors || new STARKupid.Collections.Visitors());
+    var page = (visitors.page || 1);
+    if (!visitors.total_pages) {
+      visitors.fetch({
+        data: { page: page }
+      });
+    } else {
+      if (visitors.total_pages >= page) {
+        visitors.fetch({
+          remove: false,
+
+          data: { page: page }
+        });
+      }
+    }
     var visitorsIndexView = new STARKupid.Views.VisitorsIndex({
       collection: visitors
     });
-    visitors.fetch({
-      remove: false,
-
-      data: { page: 1 },
-
-      success: function () {
-        that._swapView(visitorsIndexView);
-      }
-    });
+    this._swapView(visitorsIndexView);
   },
 
   favoritesIndex: function () {
