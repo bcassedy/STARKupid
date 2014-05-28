@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527002219) do
+ActiveRecord::Schema.define(version: 20140528211754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,15 @@ ActiveRecord::Schema.define(version: 20140527002219) do
 
   add_index "messages", ["receiver_id"], name: "index_messages_on_receiver_id", using: :btree
   add_index "messages", ["sender_id"], name: "index_messages_on_sender_id", using: :btree
+
+  create_table "photos", force: true do |t|
+    t.string   "url",        null: false
+    t.integer  "profile_id", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "photos", ["profile_id"], name: "index_photos_on_profile_id", using: :btree
 
   create_table "profiles", force: true do |t|
     t.string   "username",       null: false

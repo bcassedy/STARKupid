@@ -118,18 +118,18 @@ AnswerChoice.create!(
   question_id: question.id
 )
 
-30.times do |i|
-  user = User.create!(
-    email: "seeded_#{i}@test.com",
-    username: "Seeded_#{i}",
-    password: 'password'
-  )
+# 30.times do |i|
+#   user = User.create!(
+#     email: "seeded_#{i}@test.com",
+#     username: "Seeded_#{i}",
+#     password: 'password'
+#   )
 
-  Profile.create!(
-    username: user.username,
-    age: 999,
-    gender: 'Male',
-    location: 'Outer Space',
-    user_id: user.id
-  )
-end
+#   Profile.create!(
+#     username: user.username,
+#     age: 999,
+#     gender: 'Male',
+#     location: 'Outer Space',
+#     user_id: user.id
+#   )
+# end
