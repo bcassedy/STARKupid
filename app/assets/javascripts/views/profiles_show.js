@@ -11,6 +11,7 @@ STARKupid.Views.ProfileShow = Backbone.View.extend({
   template: JST['profiles/show'],
 
   render: function () {
+    debugger;
     var renderedContent = this.template({
       profile: this.model
     });
@@ -28,7 +29,7 @@ STARKupid.Views.ProfileShow = Backbone.View.extend({
   submitMessage: function (event) {
     event.preventDefault();
     var messageData = $(event.target).serializeJSON();
-    var url = 'api/profiles/' + this.model.get('username') + '/messages'
+    var url = 'api/profiles/' + this.model.get('username') + '/messages';
     $.ajax({
       url: url,
       type: 'POST',
@@ -36,6 +37,6 @@ STARKupid.Views.ProfileShow = Backbone.View.extend({
       success: function () {
         $('.alert-success').toggleClass('hidden');
       }
-    })
+    });
   }
 });

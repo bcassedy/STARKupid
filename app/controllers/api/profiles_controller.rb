@@ -1,7 +1,7 @@
 module Api
   class ProfilesController < ApplicationController
     def index
-      @profiles = Profile.all.page(params[:page])
+      @profiles = Profile.includes(:photos).all.page(params[:page])
       assign_match_percent
       render :index
     end
