@@ -3,15 +3,18 @@
     <div class='form-container'>
 
       <form class='profile-form' role='form'>
-        <div class='form-group'>
-          <label for='profile_photo_url'>Photo URL</label>
-          <input
-            class='form-control'
-            type="text"
-            name="profile[photo_url]"
-            value="<%= profile.get('photo_url') %>"
-            id="profile_photo_url">
-        </div>
+        <% _.each(profile.photos(), function (photo) { %>
+          <div class='form-group'>
+            <label for='profile_photo_url'>Photo URL</label>
+            <input
+              class='form-control'
+              type="text"
+              name="photo[url][]"
+              value="<%= photo.url %>"
+              id="profile_photo_url">
+          </div>
+        <% }); %>
+        <button type='button' class='btn btn-sm btn-primary' id='add-photo'>Add Photo</button>
         <div class='form-group'>
           <label for='profile_age'>Age</label>
 

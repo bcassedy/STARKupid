@@ -1,10 +1,12 @@
 STARKupid.Views.ProfileEdit = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    this.photoFields = this.model.photos().length;
   },
 
   events: {
-    'submit .profile-form': 'submit'
+    'submit .profile-form': 'submit',
+    'click #add-photo': 'addPhotoUrl'
   },
 
   className: 'row padded-top',
@@ -30,5 +32,20 @@ STARKupid.Views.ProfileEdit = Backbone.View.extend({
         Backbone.history.navigate('#/profiles/' + model.escape('username'));
       }
     });
+  },
+
+  addPhotoUrl: function (event) {
+    if (this.photoFields < 3) {
+      event.preventDefault();
+      $('.profile-form').prepend('<div class="form-group"> \
+              <label for="profile_photo_url">Photo URL</label> \
+              <input \
+                class="form-control" \
+                type="text" \
+                name="photo[url][]" \
+                id="profile_photo_url"> \
+            </div>');
+    }
+    this.photoFields += 1;
   }
 })
