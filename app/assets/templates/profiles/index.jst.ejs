@@ -1,16 +1,15 @@
-
-<% var photos = profile.photos(); %>
-<% if (photos.length === 0) { %>
-  <% var firstPhotoUrl = 'http://www.clker.com/cliparts/n/T/5/z/f/Y/image-missing-md.png'; %>
-<% } else { %>
-  <% var firstPhotoUrl = photos[0].url; %>
-<% } %>
 <div class='row'>
   <div class='col-xs-10'>
     <h1><%= header %></h1>
   </div>
   <div class='col-xs-10 panel'>
       <% profiles.each(function (profile) { %>
+        <% var photos = profile.photos(); %>
+        <% if (photos.length === 0) { %>
+          <% var firstPhotoUrl = 'http://www.clker.com/cliparts/n/T/5/z/f/Y/image-missing-md.png'; %>
+        <% } else { %>
+          <% var firstPhotoUrl = photos[0].url; %>
+        <% } %>
         <% if (profile.id !== currentUserUsername) { %>
           <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-3 profile-div' data-username='<%= profile.escape("username") %>'>
             <div class='index-photo-div'>
