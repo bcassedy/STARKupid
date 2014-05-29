@@ -4,15 +4,21 @@
 <% } else { %>
   <% addOrRemove = 'Add' %>
 <% } %>
+<% var photos = profile.photos(); %>
+<% if (photos.length === 0) { %>
+  <% var firstPhotoUrl = 'http://www.clker.com/cliparts/n/T/5/z/f/Y/image-missing-md.png'; %>
+<% } else { %>
+  <% var firstPhotoUrl = photos[0].url; %>
+<% } %>
   <div class='col-xs-10 col-xs-offset-2'>
     <div class='photo' id='lead-photo'>
       <img
-        src="<%= profile.escape('photo_url') %>"
+        src="<%= firstPhotoUrl %>"
         alt='Photo'
         height='190'
         width='190'>
     </div>
-    <% _.each(profile.photos(), function (photo) { %>
+    <% _.each(photos.slice(1), function (photo) { %>
       <div class='photo sub-photo hidden'>
         <img
           src="<%= photo.url %>"

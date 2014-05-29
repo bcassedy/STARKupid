@@ -25,8 +25,11 @@ module Api
     end
 
     def update
-      @profile = Profile.find_by_username(params[:id])
-      @profile.photos.create(params[:photo])
+      @profile = Profile.includes(:photos).find_by_username(params[:id])
+      @profile.photos.destroy_all
+      params[:photo][:url].each do |url|
+        @profile.photos.create(url: url)
+      end
       if @profile.update_attributes(profile_params)
         render partial: 'api/profiles/profile', locals: { profile: @profile }
       else

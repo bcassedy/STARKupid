@@ -36,7 +36,6 @@ STARKupid.Views.ProfileEdit = Backbone.View.extend({
 
   addPhotoUrl: function (event) {
     if (this.photoFields < 3) {
-      event.preventDefault();
       $('.profile-form').prepend('<div class="form-group"> \
               <label for="profile_photo_url">Photo URL</label> \
               <input \
@@ -45,7 +44,7 @@ STARKupid.Views.ProfileEdit = Backbone.View.extend({
                 name="photo[url][]" \
                 id="profile_photo_url"> \
             </div>');
+      this.photoFields += 1;
     }
-    this.photoFields += 1;
   }
 })

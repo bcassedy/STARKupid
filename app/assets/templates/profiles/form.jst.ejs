@@ -3,7 +3,7 @@
     <div class='form-container'>
 
       <form class='profile-form' role='form'>
-        <% _.each(profile.photos(), function (photo) { %>
+        <% _.each(profile.photos(), function (photo, i) { %>
           <div class='form-group'>
             <label for='profile_photo_url'>Photo URL</label>
             <input
