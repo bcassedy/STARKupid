@@ -19,5 +19,15 @@ module Api
         render json: @favorite.errors.full_messages
       end
     end
+
+    def destroy
+      profile = Profile.find_by_username(params[:username])
+      favorite = Favorite.where(
+        profile_id: current_user.profile.id,
+        favorited_id: profile.id
+      ).first
+      favorite.destroy
+      render json: favorite
+    end
   end
 end

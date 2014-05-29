@@ -113,6 +113,20 @@ h1 {
   background-color: #999;
 }
 
+.fav {
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 60px;
+  background-color: #555;
+  font-weight: 14;
+  border-radius: 5px;
+  padding: 4px;
+}
+
+.fav:hover {
+  background-color: #999;
+}
+
 .msg-row {
   background-color: #2e4154;
   margin-right: 40px;

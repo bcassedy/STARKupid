@@ -7,6 +7,8 @@ STARKupid.Views.ProfileShow = Backbone.View.extend({
 
   events: {
     'click .msg-button': 'msgModal',
+    'click .Remove': 'removeFavorite',
+    'click .Add': 'addFavorite',
     'submit #msg-form': 'submitMessage',
     'mouseenter #lead-photo': 'showPhotos',
     'mouseleave #lead-photo': 'showPhotos'
@@ -45,5 +47,35 @@ STARKupid.Views.ProfileShow = Backbone.View.extend({
 
   showPhotos: function (event) {
     $('.sub-photo').toggleClass('hidden');
+  },
+
+  removeFavorite: function (event) {
+    var username = this.model.id;
+    var url = 'api/favorites/' + username;
+    $.ajax({
+      url: url,
+      type: 'DELETE',
+      success: function (resp) {
+        var favorite = STARKupid.Collections.favorites.findWhere(
+          { username: username }
+        )
+        STARKupid.Collections.favorites.remove(favorite);
+        $(event.target).text('Add Favorite');
+      }
+    });
+  },
+
+  addFavorite: function (event) {
+    var favoriteData = { username: this.model.id };
+    $.ajax({
+      url: 'api/favorites',
+      type: 'POST',
+      data: favoriteData,
+      success: function (resp) {
+        var favorite = new STARKupid.Models.Profile(resp);
+        STARKupid.Collections.favorites.add(favorite);
+        $(event.target).text('Remove Favorite');
+      }
+    });
   }
 });

@@ -1,4 +1,9 @@
-
+<% var addOrRemove; %>
+<% if (STARKupid.Collections.favorites.findWhere({username: profile.id})) { %>
+  <% addOrRemove = 'Remove' %>
+<% } else { %>
+  <% addOrRemove = 'Add' %>
+<% } %>
   <div class='col-xs-10 col-xs-offset-2'>
     <div class='photo' id='lead-photo'>
       <img
@@ -21,9 +26,13 @@
       <p><%= profile.escape('age') + ' | ' + profile.escape('gender') + ' | ' + profile.escape('location') %></p>
       <div><%= profile.escape('match_percentage') %> % Match</div>
     </div>
-    <div id='send-msg' class='profile-header msg-button'>
+    <div id='send-msg' class='profile-header'>
+      <div class='msg-button'>
       Send a Message
+      </div>
+      <div class='fav <%= addOrRemove %>'><%= addOrRemove %> Favorite</div>
     </div>
+
     <div class='panel panel-default'>
       <div class='panel-body'>
         <div>
