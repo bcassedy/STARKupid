@@ -19,6 +19,7 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
   },
 
   profilesIndex: function () {
+    $('.matches').addClass('active');
     this.profiles.fetch({
       remove: false,
 

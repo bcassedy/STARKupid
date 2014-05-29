@@ -198,10 +198,6 @@ h1 {
   font-weight: bolder;
 }
 
-.unread-msgs {
-  color: red;
-}
-
 #favorites {
   padding-top: 50px;
   height: 200px;
@@ -219,4 +215,8 @@ h1 {
 li .dropdown {
   font-size: 12px;
   font-weight: 500;
+}
+
+.glyphicon-exclamation-sign {
+  color: #df691a;
 }
