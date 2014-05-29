@@ -13,6 +13,9 @@ STARKupid.Views.VisitorsIndex = Backbone.View.extend({
       visitors: this.collection
     });
     this.$el.html(renderedContent);
+    $('.profile-div').draggable({
+      revert: 'invalid'
+    });
     $(window).on('scroll', this.nextPage.bind(this));
 
     return this;

@@ -5,7 +5,7 @@
   <div class='col-xs-10 panel'>
       <% visitors.each(function (profile) { %>
         <% if (profile.id !== currentUserUsername) { %>
-          <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-3 profile-div'>
+          <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-3 profile-div' data-username='<%= profile.escape("username") %>'>
             <div class='index-photo-div'>
               <img
                 src="<%= profile.escape('photo_url') %>"
