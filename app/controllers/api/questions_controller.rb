@@ -2,6 +2,13 @@ module Api
   class QuestionsController < ApplicationController
     def index
       @questions = Question.includes(:answer_choices).all
+      @questions.reject! do |q|
+        current_user
+          .profile
+          .question_responses
+          .pluck(:question_id)
+          .include?(q.id)
+      end
       render :index
     end
 
