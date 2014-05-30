@@ -10,6 +10,7 @@
 <% } else { %>
   <% var firstPhotoUrl = photos[0].url; %>
 <% } %>
+<div class='row'>
   <div class='col-xs-10 col-xs-offset-2'>
     <div class='photo' id='lead-photo'>
       <img
@@ -38,29 +39,32 @@
       </div>
       <div class='fav <%= addOrRemove %>'><%= addOrRemove %> Favorite</div>
     </div>
+  </div>
 
+    <div class='col-xs-9 col-xs-offset-2'>
     <div class='panel panel-default'>
       <div class='panel-body'>
         <div>
-          <h4>My self-summary</h4>
+          <h3>My self-summary</h3>
           <%= profile.escape('summary') %>
-        </div>
+        </div><br>
         <div>
-          <h4>What I'm doing with my life</h4>
+          <h3>What I'm doing with my life</h3>
           <%= profile.escape('life_direction') %>
-        </div>
+        </div><br>
         <div>
-          <h4>I'm really good at</h4>
+          <h3>I'm really good at</h3>
           <%= profile.escape('skills') %>
-        </div>
+        </div><br>
         <div>
-          <h4>Favorite things</h4>
+          <h3>Favorite things</h3>
           <%= profile.escape('interests') %>
-        </div>
+        </div><br>
         <div>
-          <h4>I'm looking for</h4>
+          <h3>I'm looking for</h3>
           <%= profile.escape('goals') %>
-        </div>
+        </div><br>
       </div>
+    </div>
     </div>
   </div>
