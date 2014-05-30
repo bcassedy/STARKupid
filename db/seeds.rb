@@ -157,12 +157,10 @@ profile = Profile.create!(
     in check'
 )
 profile.photos.create(
-  url: 'http://img1.wikia.nocookie.net/__cb20131128204542/avengers-assemble/
-    images/d/df/Iron_Man_Mk_L_2.png'
+  url: 'http://img1.wikia.nocookie.net/__cb20131128204542/avengers-assemble/images/d/df/Iron_Man_Mk_L_2.png'
 )
 profile.photos.create(
-  url: 'http://www.artasylum.com/wp-content/uploads/2013/05/
-    Iron-Man-3-Header1.jpg'
+  url: 'http://www.artasylum.com/wp-content/uploads/2013/05/Iron-Man-3-Header1.jpg'
 )
 profile.photos.create(
   url: 'http://media.moddb.com/images/downloads/1/59/58967/iron-man.jpg'
@@ -182,7 +180,7 @@ profile = Profile.create!(
   summary: "Tony Stark's right hand man, the War Machine; You can call me
      Rhodey. Thanks to my military career I'm one of the most disciplined
      men you'll ever meet. I'm up every day at 6am to go for a run and
-     lift weights.\n\n
+     lift weights.  
 
     After years of war and defending the world, I've grown weary of the mantle
      of War Machine and I'm ready to kick back and relax with the right
@@ -197,16 +195,13 @@ profile = Profile.create!(
      back and relax."
 )
 profile.photos.create(
-  url: 'http://img4.wikia.nocookie.net/__cb20130808163545/mugen/images/
-    6/63/War-machine.png'
+  url: 'http://img4.wikia.nocookie.net/__cb20130808163545/mugen/images/6/63/War-machine.png'
 )
 profile.photos.create(
-  url: 'http://img1.wikia.nocookie.net/__cb20130426190144/marvelmovies/
-    images/7/75/War_Machine_2.png'
+  url: 'http://img1.wikia.nocookie.net/__cb20130426190144/marvelmovies/images/7/75/War_Machine_2.png'
 )
 profile.photos.create(
-  url: 'http://news.toyark.com/wp-content/uploads/sites/4/2011/07/
-    Revoltech-War-Machine-001_1311857918.jpg'
+  url: 'http://news.toyark.com/wp-content/uploads/sites/4/2011/07/Revoltech-War-Machine-001_1311857918.jpg'
 )
 
 
@@ -221,7 +216,7 @@ profile = Profile.create!(
   age: 27,
   gender: 'Male',
   location: 'Asgaard/NYC',
-  summary: 'I live to protect Asgaard and Earth and to drink mead.\nI\'ve
+  summary: 'I live to protect Asgaard and Earth and to drink mead. I\'ve
     been to the end of the universe and back and have seen things you won\'t
      believe.',
   life_direction: 'With the world in less peril, I\'m beginning to settle
@@ -232,16 +227,13 @@ profile = Profile.create!(
   goals: 'To find a nice girl to live a nice life with.'
 )
 profile.photos.create(
-  url: 'http://img4.wikia.nocookie.net/__cb20131010191453/ideas/images/7/
-    7b/Thor-(-)_Marvel.com_Art.jpg'
+  url: 'http://img4.wikia.nocookie.net/__cb20131010191453/ideas/images/7/7b/Thor-(-)_Marvel.com_Art.jpg'
 )
 profile.photos.create(
-  url: 'http://static.comicvine.com/uploads/original/6/64293/
-    1624744-jim622_varcov_col.jpg'
+  url: 'http://static.comicvine.com/uploads/original/6/64293/1624744-jim622_varcov_col.jpg'
 )
 profile.photos.create(
-  url: 'http://static.comicvine.com/uploads/original/11113/111130781/
-    3807855-9562322964-37687.jpg'
+  url: 'http://static.comicvine.com/uploads/original/11113/111130781/3807855-9562322964-37687.jpg'
 )
 
 user = User.create!(
@@ -265,8 +257,7 @@ profile.photos.create(
   url: 'http://keepersofsecrets.files.wordpress.com/2012/07/blackwidow.jpg'
 )
 profile.photos.create(
-  url: 'http://images.moviepilot-cdn.com/black-widow-black-widow-
-    deadpool-top-5-marvel-superheroes.jpeg?width=729&height=985'
+  url: 'http://images.moviepilot-cdn.com/black-widow-black-widow-deadpool-top-5-marvel-superheroes.jpeg?width=729&height=985'
 )
 
 user = User.create!(
@@ -291,12 +282,10 @@ profile = Profile.create!(
      looking to settle down as well.'
 )
 profile.photos.create(
-  url: 'http://upload.wikimedia.org/wikipedia/en/c/c5/
-    Pepper_Potts_in_TheOrder_6.jpg'
+  url: 'http://upload.wikimedia.org/wikipedia/en/c/c5/Pepper_Potts_in_TheOrder_6.jpg'
 )
 profile.photos.create(
-  url: 'http://static.comicvine.com/uploads/original/12/128313/
-    3043077-7947914703-28559.png'
+  url: 'http://static.comicvine.com/uploads/original/12/128313/3043077-7947914703-28559.png'
 )
 
 user = User.create(
@@ -319,8 +308,7 @@ profile = Profile.create!(
      particularly interested in seeing southeast Asia.'
 )
 profile.photos.create(
-  url: 'http://img4.wikia.nocookie.net/__cb20050619071910/
-    marveldatabase/images/0/0b/Wasp_002.jpg'
+  url: 'http://img4.wikia.nocookie.net/__cb20050619071910/marveldatabase/images/0/0b/Wasp_002.jpg'
 )
 
 15.times do |i|
@@ -343,14 +331,13 @@ profile.photos.create(
   goals: 'Ultron wishes to save the world one human at a time'
   )
   profile.photos.create(
-  url: 'http://img4.wikia.nocookie.net/__cb20120426234614/
-    nicktheultimaswordwielder/images/2/25/Ultron.png'
+  url: 'http://img4.wikia.nocookie.net/__cb20120426234614/nicktheultimaswordwielder/images/2/25/Ultron.png'
   )
 end
 
 15.times do |i|
   user = User.create(
-    email: "ultron#{i + 1}@pymcorp.com",
+    email: "evil_ultron#{i + 1}@pymcorp.com",
     username: "evil_ultron#{i + 1}",
     password: 'qwertyuiop'
   )
@@ -367,7 +354,6 @@ end
     goals: 'Humans that serve Ultron will be spared'
   )
   profile.photos.create(
-    url: 'http://wac.450f.edgecastcdn.net/80450F/screencrush.com/
-      files/2013/07/ultron2.jpg'
+    url: 'http://wac.450f.edgecastcdn.net/80450F/screencrush.com/files/2013/07/ultron2.jpg'
   )
 end
