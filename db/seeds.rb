@@ -141,6 +141,7 @@ user = User.create(
 )
 profile = Profile.create!(
   user_id: user.id,
+  username: user.username,
   age: 34,
   gender: 'Male',
   location: 'Malibu, CA',
@@ -174,6 +175,7 @@ user = User.create(
 )
 profile = Profile.create!(
   user_id: user.id,
+  username: user.username,
   age: 32,
   gender: 'Male',
   location: 'Washington, DC',
@@ -215,6 +217,7 @@ user = User.create(
 )
 profile = Profile.create!(
   user_id: user.id,
+  username: user.username,
   age: 27,
   gender: 'Male',
   location: 'Asgaard/NYC',
@@ -248,6 +251,7 @@ user = User.create!(
 )
 profile = Profile.create!(
   user_id: user.id,
+  username: user.username,
   age: 28,
   gender: 'Female',
   location: 'Parts Unknown',
@@ -272,6 +276,7 @@ user = User.create!(
 )
 profile = Profile.create!(
   user_id: user.id,
+  username: user.username,
   age: 31,
   gender: 'Female',
   location: 'Marina Del Rey, CA',
@@ -301,6 +306,7 @@ user = User.create(
 )
 profile = Profile.create!(
   user_id: user.id,
+  username: user.username,
   age: 26,
   gender: 'Female',
   location: 'NYC',
@@ -325,6 +331,7 @@ profile.photos.create(
   )
   profile = Profile.create!(
   user_id: user.id,
+  username: user.username,
   age: 1,
   gender: 'Not Applicable',
   location: '???',
@@ -349,6 +356,7 @@ end
   )
   profile = Profile.create!(
     user_id: user.id,
+    username: user.username,
     age: 1,
     gender: 'Not Applicable',
     location: '???',
