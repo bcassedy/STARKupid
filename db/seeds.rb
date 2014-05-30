@@ -157,13 +157,13 @@ profile = Profile.create!(
     in check'
 )
 profile.photos.create(
+  url: 'http://media.moddb.com/images/downloads/1/59/58967/iron-man.jpg'
+)
+profile.photos.create(
   url: 'http://img1.wikia.nocookie.net/__cb20131128204542/avengers-assemble/images/d/df/Iron_Man_Mk_L_2.png'
 )
 profile.photos.create(
   url: 'http://www.artasylum.com/wp-content/uploads/2013/05/Iron-Man-3-Header1.jpg'
-)
-profile.photos.create(
-  url: 'http://media.moddb.com/images/downloads/1/59/58967/iron-man.jpg'
 )
 
 user = User.create(

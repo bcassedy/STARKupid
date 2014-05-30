@@ -5,6 +5,7 @@ class SessionsController < ApplicationController
       signin_user!(user)
       redirect_to root_url
     else
+      debugger
       flash.now[:errors] = ['Invalid username/password']
       @user = User.new
       render :new
@@ -18,7 +19,6 @@ class SessionsController < ApplicationController
 
   def new
     @user = User.new
-    render :new, layout: false
   end
 
   private
