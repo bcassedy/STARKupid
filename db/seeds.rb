@@ -151,8 +151,9 @@ profile = Profile.create!(
      I like to enjoy some of the finer things. Beautiful women, fast cars,
       good food, and most of all good scotch.",
   skills: 'Pretty Much Everything',
-  interests: 'Booze, tech, and saving the world'
-  goals: 'A woman with a sharp wit with the and the strength to keep my ego in check'
+  interests: 'Booze, tech, and saving the world',
+  goals: 'A woman with a sharp wit with the and the strength to keep my ego
+    in check'
 )
 profile.photos.create(
   url: 'http://img1.wikia.nocookie.net/__cb20131128204542/avengers-assemble/
@@ -163,7 +164,7 @@ profile.photos.create(
     Iron-Man-3-Header1.jpg'
 )
 profile.photos.create(
-  url: 'http://media.moddb.com/images/downloads/1/59/58967/iron-man.jpg'  
+  url: 'http://media.moddb.com/images/downloads/1/59/58967/iron-man.jpg'
 )
 
 user = User.create(
@@ -176,20 +177,22 @@ profile = Profile.create!(
   age: 32,
   gender: 'Male',
   location: 'Washington, DC',
-  summary: "Tony Stark's right hand man, the War Machine; You can call me Rhodey.
-     Thanks to my military career I'm one of the most disciplined men you'll
-      ever meet. I'm up every day at 6am to go for a run and lift weights.\n\n
+  summary: "Tony Stark's right hand man, the War Machine; You can call me
+     Rhodey. Thanks to my military career I'm one of the most disciplined
+     men you'll ever meet. I'm up every day at 6am to go for a run and
+     lift weights.\n\n
 
     After years of war and defending the world, I've grown weary of the mantle
-     of War Machine and I'm ready to kick back and relax with the right woman.",
+     of War Machine and I'm ready to kick back and relax with the right
+     woman.",
   life_direction: "These days I look for ways to keep active. I love running,
      lifting weights, and yoga. I try to go camping at least once a month to
       get away from the world and enjoy some peace and quiet.",
   skills: 'Saving Tony Stark. And pullups. Lots of pullups',
   interests: 'National security',
   goals: "Someone who can keep up with me on morning runs. Ideally you'll
-     be comfortable just enjoying each other's company while we try to kick back
-     and relax."
+     be comfortable just enjoying each other's company while we try to kick
+     back and relax."
 )
 profile.photos.create(
   url: 'http://img4.wikia.nocookie.net/__cb20130808163545/mugen/images/
@@ -349,7 +352,7 @@ end
     age: 1,
     gender: 'Not Applicable',
     location: '???',
-    summary: "Ultron mission corrupted...Ultron seeks to annihilate",
+    summary: 'Ultron mission corrupted...Ultron seeks to annihilate',
     life_direction: 'Ultron will rule all',
     skills: 'Ultron has unlimited capabilities',
     interests: 'Conquering',
