@@ -10,4 +10,4 @@ json.extract!(
   :read
 )
 json.sender message.sender.username
-json.sender_photo message.sender.profile.photo_url
+json.sender_photo message.sender.profile.photos.first.url

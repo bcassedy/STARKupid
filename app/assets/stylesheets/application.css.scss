@@ -99,6 +99,10 @@ h1 {
   clear: right;
 }
 
+.msg-show {
+  margin-top: 15px;
+}
+
 .msg-button {
   text-align: center;
   margin-top: 60px;
@@ -133,9 +137,7 @@ h1 {
 }
 
 .mini-photo {
-  max-height: 50px;
-  max-width: 50px;
-  margin-top: 15px;
+  max-width: 100px !important;
   display: inline-block;
   position: relative;
 }

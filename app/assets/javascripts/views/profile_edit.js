@@ -45,6 +45,10 @@ STARKupid.Views.ProfileEdit = Backbone.View.extend({
                 id="profile_photo_url"> \
             </div>');
       this.photoFields += 1;
+    } else {
+      debugger
+      $('.form-container').prepend('<div class="alert alert-danger">Maximum \
+        3 Photos</div>');
     }
   }
-})
+});

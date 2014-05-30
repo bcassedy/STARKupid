@@ -82,7 +82,7 @@ $(document).ready(function () {
   }
   
   if (currentUserUsername) {
-    var currentUserProfile = new STARKupid.Models.Profile({
+    currentUserProfile = new STARKupid.Models.Profile({
       username: currentUserUsername
     })
     currentUserProfile.fetch();
