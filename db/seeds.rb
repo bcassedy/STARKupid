@@ -358,4 +358,8 @@ end
     interests: 'Conquering',
     goals: 'Humans that serve Ultron will be spared'
   )
+  profile.photos.create(
+    url: 'http://wac.450f.edgecastcdn.net/80450F/screencrush.com/
+      files/2013/07/ultron2.jpg'
+  )
 end
