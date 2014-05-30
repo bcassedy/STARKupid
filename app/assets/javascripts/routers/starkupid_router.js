@@ -58,7 +58,7 @@ STARKupid.Routers.CupidRouter = Backbone.Router.extend({
   },
 
   editProfile: function () {
-    if (!currentUserProfile) {
+    if (!currentUserProfile.get('created_at')) {
       Backbone.history.navigate('#/profile/new');
       return;
     }

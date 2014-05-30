@@ -1,7 +1,11 @@
 STARKupid.Views.ProfileEdit = Backbone.View.extend({
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-    this.photoFields = this.model.photos().length;
+    if (this.model.photos()) {
+      this.photoFields = this.model.photos().length;
+    } else {
+      this.photoFields = 0;
+    }
   },
 
   events: {
@@ -46,7 +50,6 @@ STARKupid.Views.ProfileEdit = Backbone.View.extend({
             </div>');
       this.photoFields += 1;
     } else {
-      debugger
       $('.form-container').prepend('<div class="alert alert-danger">Maximum \
         3 Photos</div>');
     }

@@ -3,7 +3,11 @@ STARKupid.Models.Profile = Backbone.Model.extend({
   idAttribute: 'username',
 
   url: function () {
-    return 'api/profiles/' + this.id;
+    if (this.created_at) {
+      return 'api/profiles/' + this.id;
+    } else {
+      return 'api/profiles'
+    }
   },
 
   photos: function () {

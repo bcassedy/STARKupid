@@ -2,8 +2,10 @@ module Api
   class ProfilesController < ApplicationController
     def index
       @profiles = Profile.includes(:photos).page(params[:page])
-      assign_match_percent(@profiles)
-      @profiles << Profile.find_by_username(current_user.username)
+      if current_user.profile
+        assign_match_percent(@profiles)
+        @profiles << Profile.find_by_username(current_user.username)
+      end
       render :index
     end
 
@@ -18,10 +20,10 @@ module Api
       @profile = Profile.new(profile_params)
       @profile.user_id = current_user.id
       @profile.username = current_user.username
-      params[:photo][:url].each do |url|
-        @profile.photos.create(url: url)
-      end
       if @profile.save
+        params[:photo][:url].each do |url|
+          @profile.photos.create(url: url)
+        end
         render partial: 'api/profiles/profile', locals: { profile: @profile }
       else
         render json: { errors: @profile.errors.full_messages }, status: 422
