@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'bcrypt'
 
+gem 'newrelic_rpm'
+
 gem 'kaminari'
 
 gem 'annotate'
