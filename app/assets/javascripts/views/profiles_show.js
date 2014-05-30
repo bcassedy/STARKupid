@@ -17,7 +17,6 @@ STARKupid.Views.ProfileShow = Backbone.View.extend({
   template: JST['profiles/show'],
 
   render: function () {
-    debugger
     var renderedContent = this.template({
       profile: this.model
     });
