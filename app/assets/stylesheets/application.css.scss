@@ -42,6 +42,10 @@ h1 {
   top: 52px;
 }
 
+#left-nav a {
+  font-size: 105%;
+}
+
 .left-nav {
   color: #5378c8;
   line-height: 16px;
@@ -83,7 +87,8 @@ h1 {
 }
 
 .navbar-brand {
-  padding: 0px 15px;
+  padding: 8px 12px;
+  color: #108d78 !important;
 }
 
 .panel {
@@ -222,4 +227,12 @@ li .dropdown {
 
 .glyphicon-exclamation-sign {
   color: #df691a;
+}
+
+.navbar-right {
+  font-size: 110%;
+}
+
+.dropdown-link {
+  font-size: 100% !important;
 }

@@ -10,7 +10,7 @@
   <nav class='navbar navbar-inverse' role='navigation'>
     <div class='container-fluid'>
       <div class='navbar-header'>
-        <a href='#' class='navbar-brand'><%= image_tag 'starkupid.png', size: '55x40' %></a>
+        <a href='#' class='navbar-brand'>STARKcupid</a>
       </div>
 
     <div class='collapse navbar-collapse'>
@@ -32,9 +32,14 @@
             <%= current_user.username %> <b class='caret'></b>
           </a>
           <ul class='dropdown-menu'>
-            <li><a href='#/profile/edit'>Edit Profile</a></li>
+            <li><a href='#/profile/edit' class='dropdown-link'>
+              Edit Profile
+            </a></li>
             <li>
-              <a href='#/profiles/<%= current_user.username %>'>View Profile</a>
+              <a href='#/profiles/<%= current_user.username %>' 
+                class='dropdown-link'>
+                View Profile
+              </a>
             </li>
           </ul>
         </li>
