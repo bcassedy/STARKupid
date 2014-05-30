@@ -27,7 +27,7 @@ module Api
         favorited_id: profile.id
       ).first
       favorite.destroy
-      render json: favorite
+      render partial: 'api/profiles/profile', locals: { profile: profile }
     end
   end
 end

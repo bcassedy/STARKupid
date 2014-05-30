@@ -65,5 +65,35 @@ $(document).ready(function () {
         }
       });
     }
-  })
+  });
+
+  function getMessages () {
+    STARKupid.Collections.messages.fetch({
+      success: function () {
+        if (STARKupid.Collections.messages.some(function (message) {
+          return message.get('read') === false;
+        })) {
+          $('.glyphicon-exclamation-sign').removeClass('hidden');
+        } else {
+          $('.glyphicon-exclamation-sign').addClass('hidden');
+        }
+      }
+    });
+  }
+  
+  if (currentUserUsername) {
+    var currentUserProfile = new STARKupid.Models.Profile({
+      username: currentUserUsername
+    })
+    currentUserProfile.fetch();
+    STARKupid.Collections.messages = 
+      (STARKupid.Collections.messages || 
+        new STARKupid.Collections.Messages());
+    getMessages();
+    setInterval(getMessages,
+      20000
+    );
+    STARKupid.Collections.favorites = (STARKupid.Collections.favorites || new STARKupid.Collections.Favorites());
+    STARKupid.Collections.favorites.fetch();
+  }
 });

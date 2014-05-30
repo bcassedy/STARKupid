@@ -61,6 +61,8 @@ STARKupid.Views.ProfileShow = Backbone.View.extend({
         )
         STARKupid.Collections.favorites.remove(favorite);
         $(event.target).text('Add Favorite');
+        $('.fav').addClass('Add');
+        $('.fav').removeClass('Remove');
       }
     });
   },
@@ -75,6 +77,8 @@ STARKupid.Views.ProfileShow = Backbone.View.extend({
         var favorite = new STARKupid.Models.Profile(resp);
         STARKupid.Collections.favorites.add(favorite);
         $(event.target).text('Remove Favorite');
+        $('.fav').addClass('Remove');
+        $('.fav').removeClass('Add');
       }
     });
   }
