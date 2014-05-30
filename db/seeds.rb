@@ -135,7 +135,7 @@ AnswerChoice.create!(
 # end
 
 user = User.create(
-  email: 'tony@stark.com',
+  email: 'ironman@stark.com',
   username: 'iron_man',
   password: 'qwertyuiop'
 )
@@ -164,6 +164,38 @@ profile.photos.create(
 )
 profile.photos.create(
   url: 'http://img1.wikia.nocookie.net/__cb20131128204542/avengers-assemble/images/d/df/Iron_Man_Mk_L_2.png'
+)
+
+user = User.create(
+  email: 'tony@stark.com',
+  username: 'tony_stark',
+  password: 'zxcvbnm'
+)
+profile = Profile.create!(
+  user_id: user.id,
+  username: user.username,
+  age: 34,
+  gender: 'Male',
+  location: 'Malibu, CA',
+  summary: "Hi, I'm Tony. You've probably seen me save the world or testify
+     before Congress, but don't worry I'm actually a very down to earth guy.
+     Really I'm just your average super-genius turned hero with a God-complex",
+  life_direction: "When I'm not busy saving the world as Iron Man,
+     I like to enjoy some of the finer things. Beautiful women, fast cars,
+      good food, and most of all good scotch.",
+  skills: 'Pretty Much Everything',
+  interests: 'Booze, tech, and saving the world',
+  goals: 'A woman with a sharp wit with the and the strength to keep my ego
+    in check'
+)
+profile.photos.create(
+  url: 'http://img2.wikia.nocookie.net/__cb20130420194718/marveldatabase/images/3/37/Anthony_Stark_(Earth-616)_from_Iron_Man_Vol_5_7_001.jpg'
+)
+profile.photos.create(
+  url: 'http://media.tumblr.com/tumblr_m6d4wubd7i1qgsmk4.jpg'
+)
+profile.photos.create(
+  url: 'http://25.media.tumblr.com/tumblr_m8trww0Qid1qlva78o1_500.jpg'
 )
 
 user = User.create(
