@@ -133,3 +133,46 @@ AnswerChoice.create!(
 #     user_id: user.id
 #   )
 # end
+
+user = User.create!(
+  email: 'thor@asgaard.com',
+  username: 'mighty_thor',
+  password: 'qwertyuiop'
+)
+Profile.create!(
+  user_id: user.id,
+  age: 27,
+  gender: 'Male',
+  location: 'Asgaard/NYC',
+  summary: 'I live to protect Asgaard and Earth and to drink mead.\nI\'ve
+    been to the end of the universe and back and have seen things you won\'t
+     believe.',
+  life_direction: 'With the world in less peril, I\'m beginning to settle
+     down. These days I want nothing more than a dog, a stein of mead, and a
+     lass to share them with.',
+  skills: 'Well I AM the god of thunder.',
+  goals: 'To find a nice girl to live a nice life with.'
+)
+
+user = User.create!(
+  email: 'blackwidow@shield.gov',
+  username: 'black_widow',
+  password: 'qwertyuiop'
+)
+profile = Profile.create!(
+  user_id: user.id,
+  age: 28,
+  gender: 'Female',
+  location: 'Parts Unknown',
+  summary: 'I live to protect Asgaard and Earth and to drink mead.\nI\'ve
+    been to the end of the universe and back and have seen things you won\'t
+     believe.',
+  life_direction: 'With the world in less peril, I\'m beginning to settle
+     down. These days I want nothing more than a dog, a stein of mead, and a
+     lass to share them with.',
+  skills: 'Well I AM the god of thunder.',
+  goals: 'To find a nice girl to live a nice life with.'
+)
+profile.photos.create(
+  url: 'http://keepersofsecrets.files.wordpress.com/2012/07/blackwidow.jpg'
+)

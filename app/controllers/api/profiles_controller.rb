@@ -17,6 +17,9 @@ module Api
       @profile = Profile.new(profile_params)
       @profile.user_id = current_user.id
       @profile.username = current_user.username
+      params[:photo][:url].each do |url|
+        @profile.photos.create(url: url)
+      end
       if @profile.save
         render partial: 'api/profiles/profile', locals: { profile: @profile }
       else
