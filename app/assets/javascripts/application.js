@@ -62,6 +62,14 @@ $(document).ready(function () {
         success: function (resp) {
           var favorite = new STARKupid.Models.Profile(resp);
           STARKupid.Collections.favorites.add(favorite);
+          $('.alert').remove();
+          $('.panel').prepend('<div class="alert alert-success text-center">\
+            Added Favorite</div>');
+        },
+        error: function (resp) {
+          $('.alert').remove();
+          $('.panel').prepend('<div class="alert alert-danger text-center">\
+            Add Favorite Failed</div>');
         }
       });
     }

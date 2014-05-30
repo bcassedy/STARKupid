@@ -9,6 +9,7 @@ STARKupid.Views.VisitorsIndex = Backbone.View.extend({
   className: 'col-xs-10 col-xs-offset-2',
 
   render: function () {
+    this.removeCurrentUser();
     var renderedContent = this.template({
       visitors: this.collection
     });
@@ -30,6 +31,13 @@ STARKupid.Views.VisitorsIndex = Backbone.View.extend({
           data: { page: this.collection.page }
         });
       } 
+    }
+  },
+
+  removeCurrentUser: function () {
+    var curUser = this.collection.findWhere({username: currentUserUsername});
+    if (curUser) {
+      this.collection.remove(curUser);
     }
   }
 })

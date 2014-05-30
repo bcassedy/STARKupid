@@ -3,21 +3,25 @@
     <h1>Visitors</h1>
   </div>
   <div class='col-xs-10 panel'>
-      <% visitors.each(function (profile) { %>
-        <% if (profile.id !== currentUserUsername) { %>
-          <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-3 profile-div' data-username='<%= profile.escape("username") %>'>
-            <div class='index-photo-div'>
-              <img
-                src="<%= profile.escape('photo_url') %>"
-                alt='Photo'
-                class='index-photo'>
-            </div>
-            <p><%= profile.escape('username') %></p>
-            <p><%= profile.escape('age') + ' | ' + profile.escape('location') %></p>
-            <p><%= profile.escape('match_percentage') %> % Match</p>
+    <% if (visitors.length === 0) { %>
+      <p class='text-center'>You don't have any visitors yet. Perhaps you
+        should edit your profile to attract more visitors!</p>
+    <% } %>
+    <% visitors.each(function (profile) { %>
+      <% if (profile.id !== currentUserUsername) { %>
+        <a href='#/profiles/<%= profile.escape("username") %>'><div class='col-xs-3 profile-div' data-username='<%= profile.escape("username") %>'>
+          <div class='index-photo-div'>
+            <img
+              src="<%= profile.photos()[0].url %>"
+              alt='Photo'
+              class='index-photo'>
           </div>
-          </a>
-        <% } %>
-      <% }); %>
+          <p><%= profile.escape('username') %></p>
+          <p><%= profile.escape('age') + ' | ' + profile.escape('location') %></p>
+          <p><%= profile.escape('match_percentage') %> % Match</p>
+        </div>
+        </a>
+      <% } %>
+    <% }); %>
   </div>
 </div>

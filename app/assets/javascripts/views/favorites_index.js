@@ -14,6 +14,7 @@ STARKupid.Views.FavoritesIndex = Backbone.View.extend({
       header: 'Favorites'
     });
     this.$el.html(renderedContent);
+    this.anyFavorites();
     $(window).on('scroll', this.nextPage.bind(this));
 
     return this;
@@ -33,6 +34,13 @@ STARKupid.Views.FavoritesIndex = Backbone.View.extend({
           data: { page: this.collection.page }
         });
       } 
+    }
+  },
+
+  anyFavorites: function () {
+    if (this.collection.length === 0) {
+      $('.panel').append("<p class='text-center'>You haven\'t added \
+        any favorites yet!</p>");
     }
   }
 });
