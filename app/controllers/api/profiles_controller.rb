@@ -45,7 +45,7 @@ module Api
 
     def search
       @profiles = Profile.search_by_username(params[:query])
-      assign_match_percent
+      assign_match_percent(@profiles)
       render :search_results
     end
 
