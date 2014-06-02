@@ -1,5 +1,7 @@
 module Api
   class ProfilesController < ApplicationController
+    before_action :ensure_logged_in
+
     def index
       @profiles = Profile.includes(:photos).page(params[:page])
       if current_user.profile

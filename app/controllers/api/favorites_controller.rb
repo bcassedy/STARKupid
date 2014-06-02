@@ -1,5 +1,7 @@
 module Api
   class FavoritesController < ApplicationController
+    before_action :ensure_logged_in
+
     def index
       @favorites = current_user.profile.favorited_profiles.page(params[:page])
       @favorites.each do |profile|

@@ -1,5 +1,7 @@
 module Api
   class AnsweredQuestionsController < ApplicationController
+    before_action :ensure_logged_in
+
     def create
       answered_question = AnsweredQuestion.new(answered_question_params)
       answered_question.question_id = params[:question_id]

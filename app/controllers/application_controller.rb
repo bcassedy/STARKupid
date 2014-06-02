@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include ApplicationHelper
   helper_method :current_user
+
+  def ensure_logged_in
+    redirect_to new_session_url unless current_user
+  end
 end

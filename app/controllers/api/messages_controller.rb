@@ -1,5 +1,7 @@
 module Api
   class MessagesController < ApplicationController
+    before_action :ensure_logged_in
+
     def create
       @message =  Message.new(message_params)
       @message.sender_id = current_user.id
