@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    # updated
     @user = User.new
     render :new
   end
