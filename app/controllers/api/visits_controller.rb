@@ -1,5 +1,7 @@
 module Api
   class VisitsController < ApplicationController
+    before_action :ensure_logged_in
+
     def index
       @visitors = current_user.profile.visitors.page(params[:page])
       @visitors.each do |visitor|

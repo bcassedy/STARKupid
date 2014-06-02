@@ -1,5 +1,7 @@
 module Api
   class QuestionsController < ApplicationController
+    before_action :ensure_logged_in
+
     def index
       @questions = Question.includes(:answer_choices).all
       @questions.reject! do |q|
