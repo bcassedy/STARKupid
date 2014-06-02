@@ -6,19 +6,35 @@
         type='hidden' 
         name='authenticity_token' 
         value='<%= form_authenticity_token %>'>
-      <label>Email
-        <input
-          type='text'
-          id='email'
-          name='user[email]'
-          value='<%= @user.email %>'>
-      </label>
-      <label>Username
-        <input type='text' id='username' name='user[username]' value='<%= @user.username %>'>
-      </label>
-      <label>Password
-        <input type='password' name='user[password]' id='password'>
-      </label>
+      <div class='form-group'>
+        <label>Email
+          <input
+            type='text'
+            class='form-control'
+            id='email'
+            name='user[email]'
+            value='<%= @user.email %>'>
+        </label>
+      </div>
+      <div class='form-group'>
+        <label>Username
+          <input
+            type='text'
+            class='form-control'
+            id='username'
+            name='user[username]'
+            value='<%= @user.username %>'>
+        </label>
+      </div>
+      <div class='form-group'>
+        <label>Password
+          <input 
+            type='password'
+            class='form-control'
+            name='user[password]'
+            id='password'>
+        </label>
+      </div>
       <input class='btn btn-primary' id='submit' type='submit' value='Sign In'>
     </form>
   </div>
