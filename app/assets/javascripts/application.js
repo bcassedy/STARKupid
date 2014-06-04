@@ -90,10 +90,12 @@ $(document).ready(function () {
   }
   
   if (currentUserUsername) {
-    currentUserProfile = new STARKupid.Models.Profile({
-      username: currentUserUsername
-    })
-    currentUserProfile.fetch();
+    STARKupid.Collections.profiles.fetch({
+      success: function () {
+        currentUserProfile =
+          STARKupid.Collections.profiles.get(currentUserUsername);
+      }
+    });
     STARKupid.Collections.messages = 
       (STARKupid.Collections.messages || 
         new STARKupid.Collections.Messages());
