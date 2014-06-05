@@ -6,133 +6,117 @@
 #   cities = City.create!([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create!(name: 'Emanuel', city: cities.first)
 
-question = Question.create!(
+question1 = Question.create!(
   title: 'How would you describe yourself spiritually?'
 )
-AnswerChoice.create!(
+answer_choice1 = AnswerChoice.create!(
   choice: 'Very religious. And it\'s important to me',
   value: 1,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice2 = AnswerChoice.create!(
   choice: 'Very religious. And it\'s not that important to me',
   value: 2,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice3 = AnswerChoice.create!(
   choice: 'Spiritual but not religious. And it\'s important to me',
   value: 3,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice4 = AnswerChoice.create!(
   choice: 'Not religious.',
   value: 4,
   question_id: question.id
 )
 
-question = Question.create!(title: 'How often do you drink')
-AnswerChoice.create!(
+question2 = Question.create!(title: 'How often do you drink')
+answer_choice5 = AnswerChoice.create!(
   choice: 'Constantly',
   value: 1,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice6 = AnswerChoice.create!(
   choice: 'Often',
   value: 2,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice7 = AnswerChoice.create!(
   choice: 'Socially',
   value: 3,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice8 = AnswerChoice.create!(
   choice: 'Never',
   value: 4,
   question_id: question.id
 )
 
-question = Question.create!(title: 'How do you feel about superheroes?')
-AnswerChoice.create!(
+question3 = Question.create!(title: 'How do you feel about superheroes?')
+answer_choice9 = AnswerChoice.create!(
   choice: 'Thanks for saving our butts!',
   value: 1,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice10 = AnswerChoice.create!(
   choice: 'The costumes are cool I guess',
   value: 2,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice11 = AnswerChoice.create!(
   choice: 'Meh',
   value: 3,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice12 = AnswerChoice.create!(
   choice: 'Damn vigilantes, I wish they\'d dissapear',
   value: 4,
   question_id: question.id
 )
 
-question = Question.create!(title: 'Is AC/DC the greatest band ever?')
-AnswerChoice.create!(
+question4 = Question.create!(title: 'Is AC/DC the greatest band ever?')
+answer_choice13 = AnswerChoice.create!(
   choice: 'Booyah! I\'m on the highway to hell!',
   value: 1,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice14 = AnswerChoice.create!(
   choice: 'They rock!',
   value: 2,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice15 = AnswerChoice.create!(
   choice: 'I like them in small doses',
   value: 3,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice16 = AnswerChoice.create!(
   choice: 'I hate life',
   value: 4,
   question_id: question.id
 )
 
-question = Question.create!(title: 'Do you want kids?')
-AnswerChoice.create!(
+question5 = Question.create!(title: 'Do you want kids?')
+answer_choice17 = AnswerChoice.create!(
   choice: 'Yes. Definitely',
   value: 1,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice18 = AnswerChoice.create!(
   choice: 'Yeah. Some day',
   value: 2,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice19 = AnswerChoice.create!(
   choice: 'Maybe',
   value: 3,
   question_id: question.id
 )
-AnswerChoice.create!(
+answer_choice20 = AnswerChoice.create!(
   choice: 'No',
   value: 4,
   question_id: question.id
 )
-
-# 30.times do |i|
-#   user = User.create!(
-#     email: "seeded_#{i}@test.com",
-#     username: "Seeded_#{i}",
-#     password: 'password'
-#   )
-
-#   Profile.create!(
-#     username: user.username,
-#     age: 999,
-#     gender: 'Male',
-#     location: 'Outer Space',
-#     user_id: user.id
-#   )
-# end
 
 user = User.create(
   email: 'ironman@stark.com',
@@ -365,6 +349,32 @@ profile.photos.create(
   profile.photos.create(
   url: 'http://img4.wikia.nocookie.net/__cb20120426234614/nicktheultimaswordwielder/images/2/25/Ultron.png'
   )
+  profile.question_responses.new(
+    profile_id: profile.id,
+    question_id: question1.id,
+    answer_id: answer_choice4.id
+  )
+  profile.question_responses.new(
+    profile_id: profile.id,
+    question_id: question2.id,
+    answer_id: answer_choice8.id
+  )
+  profile.question_responses.new(
+    profile_id: profile.id,
+    question_id: question3.id,
+    answer_id: answer_choice9.id
+  )
+  profile.question_responses.new(
+    profile_id: profile.id,
+    question_id: question4.id,
+    answer_id: answer_choice16.id
+  )
+  profile.question_responses.new(
+    profile_id: profile.id,
+    question_id: question5.id,
+    answer_id: answer_choice20.id
+  )
+  profile.save
 end
 
 15.times do |i|
@@ -387,5 +397,30 @@ end
   )
   profile.photos.create(
     url: 'http://wac.450f.edgecastcdn.net/80450F/screencrush.com/files/2013/07/ultron2.jpg'
+  )
+  profile.question_responses.new(
+    profile_id: profile.id,
+    question_id: question1.id,
+    answer_id: answer_choice4.id
+  )
+  profile.question_responses.new(
+    profile_id: profile.id,
+    question_id: question2.id,
+    answer_id: answer_choice5.id
+  )
+  profile.question_responses.new(
+    profile_id: profile.id,
+    question_id: question3.id,
+    answer_id: answer_choice11.id
+  )
+  profile.question_responses.new(
+    profile_id: profile.id,
+    question_id: question4.id,
+    answer_id: answer_choice13.id
+  )
+  profile.question_responses.new(
+    profile_id: profile.id,
+    question_id: question5.id,
+    answer_id: answer_choice20.id
   )
 end
