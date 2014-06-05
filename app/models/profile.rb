@@ -68,8 +68,8 @@ class Profile < ActiveRecord::Base
   end
 
   def calculate_match_rating(answers_in_common, match_answers_in_common)
-    # remove minimum number of questions for better demo
-    # return 0 if match_answers_in_common.count < 5
+    # reduce minimum number of questions for better demo
+    return 0 if match_answers_in_common.count < 1
     response_diffs_sum = 0
     answers_in_common.each_with_index do |resp, i|
       response_diffs_sum += (resp.answer.value -
