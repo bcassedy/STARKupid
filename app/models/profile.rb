@@ -43,7 +43,6 @@ class Profile < ActiveRecord::Base
     match_answered_questions_ids = get_answered_question_ids(
       match_answered_questions
     )
-    # debugger
     answered_questions = sort_responses(self)
     answered_questions_in_common = get_responses_in_common(
       answered_questions,
@@ -69,7 +68,8 @@ class Profile < ActiveRecord::Base
   end
 
   def calculate_match_rating(answers_in_common, match_answers_in_common)
-    return 0 if match_answers_in_common.count < 5
+    # remove minimum number of questions for better demo
+    # return 0 if match_answers_in_common.count < 5
     response_diffs_sum = 0
     answers_in_common.each_with_index do |resp, i|
       response_diffs_sum += (resp.answer.value -
