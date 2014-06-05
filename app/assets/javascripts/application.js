@@ -81,9 +81,9 @@ $(document).ready(function () {
         if (STARKupid.Collections.messages.some(function (message) {
           return message.get('read') === false;
         })) {
-          $('.glyphicon-exclamation-sign').removeClass('hidden');
+          $('.glyphicon-envelope').addClass('msg-alert');
         } else {
-          $('.glyphicon-exclamation-sign').addClass('hidden');
+          $('.glyphicon-envelope').removeClass('msg-alert');
         }
       }
     });
