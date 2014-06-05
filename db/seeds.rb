@@ -349,28 +349,23 @@ profile.photos.create(
   profile.photos.create(
   url: 'http://img4.wikia.nocookie.net/__cb20120426234614/nicktheultimaswordwielder/images/2/25/Ultron.png'
   )
-  profile.question_responses.new(
-    profile_id: profile.id,
+  profile.question_responses.create(
     question_id: question1.id,
     answer_id: answer_choice4.id
   )
-  profile.question_responses.new(
-    profile_id: profile.id,
+  profile.question_responses.create(
     question_id: question2.id,
     answer_id: answer_choice8.id
   )
-  profile.question_responses.new(
-    profile_id: profile.id,
+  profile.question_responses.create(
     question_id: question3.id,
     answer_id: answer_choice9.id
   )
-  profile.question_responses.new(
-    profile_id: profile.id,
+  profile.question_responses.create(
     question_id: question4.id,
     answer_id: answer_choice16.id
   )
-  profile.question_responses.new(
-    profile_id: profile.id,
+  profile.question_responses.create(
     question_id: question5.id,
     answer_id: answer_choice20.id
   )
@@ -398,28 +393,23 @@ end
   profile.photos.create(
     url: 'http://wac.450f.edgecastcdn.net/80450F/screencrush.com/files/2013/07/ultron2.jpg'
   )
-  profile.question_responses.new(
-    profile_id: profile.id,
+  profile.question_responses.create(
     question_id: question1.id,
     answer_id: answer_choice4.id
   )
-  profile.question_responses.new(
-    profile_id: profile.id,
+  profile.question_responses.create(
     question_id: question2.id,
     answer_id: answer_choice5.id
   )
-  profile.question_responses.new(
-    profile_id: profile.id,
+  profile.question_responses.create(
     question_id: question3.id,
     answer_id: answer_choice11.id
   )
-  profile.question_responses.new(
-    profile_id: profile.id,
+  profile.question_responses.create(
     question_id: question4.id,
     answer_id: answer_choice13.id
   )
-  profile.question_responses.new(
-    profile_id: profile.id,
+  profile.question_responses.create(
     question_id: question5.id,
     answer_id: answer_choice20.id
   )
